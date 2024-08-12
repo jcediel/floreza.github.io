@@ -7574,6 +7574,23 @@ video {
 
 }
 
+.intro11-section .intro11-content .title-3 {
+  font-family: "Great Vibes", cursive;
+  font-size: 80px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.intro11-section .intro11-content .title-4 {
+  font-family: "Great Vibes", cursive;
+  font-size: 35px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+
 @media (max-width: 479px) {
   .breadcrumbs-area-contact .breadcrumb-content .title-3 {
     font-size: 24px;
