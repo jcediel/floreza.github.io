@@ -405,38 +405,33 @@
 	const form = $('#contact-form'),
 	formMessages = $('.form-message');
 
-	 $(form).submit(function (e) {
-		 e.preventDefault();
-		 var formData = form.serialize();
-		 $.ajax({
-			 type: 'POST',
-			 url: form.attr('action'),
-			 data: formData
-		 }).done(function (response) {
-			 // Make sure that the formMessages div has the 'success' class.
-			 $(formMessages).removeClass('alert alert-danger');
-			 $(formMessages).addClass('alert alert-success fade show');
+	function showFormMessage(type, text) {
+		formMessages.removeClass('alert-success alert-danger')
+			.addClass('alert alert-' + type + ' fade show')
+			.text(text);
+	}
 
-			 // Set the message text.
-			 formMessages.html("<button type='button' class='close' data-dismiss='alert'>&times;</button>");
-			 formMessages.append(response);
-
-			 // Clear the form.
-			 $('#contact-form input,#contact-form textarea').val('');
-		 }).fail(function (data) {
-			 // Make sure that the formMessages div has the 'error' class.
-			 $(formMessages).removeClass('alert alert-success');
-			 $(formMessages).addClass('alert alert-danger fade show');
-
-			 // Set the message text.
-			 if (data.responseText !== '') {
-				 formMessages.html("<button type='button' class='close' data-dismiss='alert'>&times;</button>");
-				 formMessages.append(data.responseText);
-			 } else {
-				 $(formMessages).text('Oops! An error occurred and your message could not be sent.');
-			 }
-		 });
-	 });
+	$(form).submit(function (e) {
+		e.preventDefault();
+		var submitBtn = form.find('button[type="submit"]').prop('disabled', true);
+		$.ajax({
+			type: 'POST',
+			url: form.attr('action'),
+			data: form.serialize(),
+			dataType: 'json'
+		}).done(function (response) {
+			if (response && response.ok) {
+				showFormMessage('success', "Thank you! Your message has been sent. We'll get back to you soon.");
+				form[0].reset();
+			} else {
+				showFormMessage('danger', (response && response.error) || 'Oops! An error occurred and your message could not be sent.');
+			}
+		}).fail(function () {
+			showFormMessage('danger', 'Oops! An error occurred and your message could not be sent. Please email us at info@florezaus.com.');
+		}).always(function () {
+			submitBtn.prop('disabled', false);
+		});
+	});
 	/*--------------------------------
 	/* 	Scroll To Top
 	-------------------------------- */

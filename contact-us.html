@@ -261,48 +261,63 @@
             </div>
             <div class="row">
                 <div class="col-md-12 col-custom">
-                    <form method="post" action="http://whizthemes.com/mail-php/reza/flosun/mail.php" id="contact-form"
-                        accept-charset="UTF-8" class="contact-form">
+                    <!-- Backend: Google Apps Script, see apps-script/README.md -->
+                    <form method="post" action="https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec"
+                        id="contact-form" accept-charset="UTF-8" class="contact-form">
                         <div class="comment-box mt-5">
                             <h5 class="text-uppercase">Get in Touch</h5>
                             <div class="row mt-3">
                                 <div class="col-md-6 col-custom">
                                     <div class="input-item mb-4">
+                                        <label for="con_name" class="visually-hidden">Name</label>
                                         <input class="border-0 rounded-0 w-100 input-area name gray-bg" type="text"
-                                            name="con_name" id="con_name" placeholder="Name">
+                                            name="con_name" id="con_name" placeholder="Name" maxlength="200"
+                                            autocomplete="name" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-custom">
                                     <div class="input-item mb-4">
+                                        <label for="con_email" class="visually-hidden">Email</label>
                                         <input class="border-0 rounded-0 w-100 input-area email gray-bg" type="email"
-                                            name="con_email" id="con_email" placeholder="Email">
+                                            name="con_email" id="con_email" placeholder="Email" maxlength="200"
+                                            autocomplete="email" required>
                                     </div>
                                 </div>
                                 <div class="col-6 col-custom">
                                     <div class="input-item mb-4">
-                                        <input class="border-0 rounded-0 w-100 input-area email gray-bg" type="text"
-                                            name="con_content" id="con_content" placeholder="Subject">
+                                        <label for="con_subject" class="visually-hidden">Subject</label>
+                                        <input class="border-0 rounded-0 w-100 input-area gray-bg" type="text"
+                                            name="con_subject" id="con_subject" placeholder="Subject" maxlength="200">
                                     </div>
                                 </div>
                                 <div class="col-6 col-custom">
                                     <div class="input-item mb-4">
-                                        <input class="border-0 rounded-0 w-100 input-area email gray-bg" type="number"
-                                            name="con_content" id="con_content" placeholder="Phone">
+                                        <label for="con_phone" class="visually-hidden">Phone</label>
+                                        <input class="border-0 rounded-0 w-100 input-area gray-bg" type="tel"
+                                            name="con_phone" id="con_phone" placeholder="Phone" maxlength="40"
+                                            autocomplete="tel">
                                     </div>
                                 </div>
                                 <div class="col-12 col-custom">
                                     <div class="input-item mb-4">
+                                        <label for="con_message" class="visually-hidden">Message</label>
                                         <textarea cols="30" rows="5"
                                             class="border-0 rounded-0 w-100 custom-textarea input-area gray-bg"
-                                            name="con_message" id="con_message" placeholder="Message"></textarea>
+                                            name="con_message" id="con_message" placeholder="Message" maxlength="5000"
+                                            required></textarea>
                                     </div>
+                                </div>
+                                <!-- Honeypot: hidden from people, bots fill it -->
+                                <div class="visually-hidden" aria-hidden="true">
+                                    <label for="website">Website</label>
+                                    <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
                                 </div>
                                 <div class="col-12 col-custom mt-40">
                                     <button type="submit" id="submit" name="submit"
                                         class="btn flosun-button secondary-btn theme-color rounded-0">Send A
                                         Message</button>
                                 </div>
-                                <p class="col-8 col-custom form-message mb-0"></p>
+                                <p class="col-8 col-custom form-message mb-0" role="status" aria-live="polite"></p>
                             </div>
                         </div>
                     </form>
