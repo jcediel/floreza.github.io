@@ -32,6 +32,7 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/catalogue-viewer.css">
 
 </head>
 
@@ -67,6 +68,11 @@
                                 <li>
                                     <a class="active" href="products.html">
                                         <span class="menu-text">Products</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="seasonal.html">
+                                        <span class="menu-text">Seasonal</span>
                                     </a>
                                 </li>
                                 <li>
@@ -116,6 +122,7 @@
                                 </li>
                                 <li><a href="about-us.html">About Us</a></li>
                                 <li><a href="products.html">Products</a></li>
+                                <li><a href="seasonal.html">Seasonal</a></li>
                                 <li><a href="contact-us.html">Contact</a></li>
                             </ul>
                         </nav>
@@ -233,7 +240,7 @@
                         <div class="desc-content">
                             
                         </div>
-                        <a href="assets/media/catalogue_bqts.pdf" class="btn flosun-button secondary-btn rounded-0"
+                        <a href="assets/media/catalogue_bqts.pdf" data-catalogue="bouquets" class="btn flosun-button secondary-btn rounded-0"
                             target="_blank">VIEW
                             CATALOGUE</a>
                     </div>
@@ -302,20 +309,6 @@
                             <div class="single-item swiper-slide">
                                 <!--Single Testimonial Start-->
                                 <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boutique/10.JPG" alt="" style="width: 450px;">
-                                </div>
-                                <!--Single Testimonial End-->
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <!--Single Testimonial Start-->
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boutique/11.jpg" alt="" style="width: 450px;">
-                                </div>
-                                <!--Single Testimonial End-->
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <!--Single Testimonial Start-->
-                                <div class="single-testimonial text-center">
                                     <img src="assets/images/products/boutique/12.webp" alt="" style="width: 450px;">
                                 </div>
                                 <!--Single Testimonial End-->
@@ -350,7 +343,7 @@
                         <div class="desc-content">
                            
                         </div>
-                        <a href="assets/media/catalogue_roses.pdf" class="btn flosun-button secondary-btn rounded-0"
+                        <a href="assets/media/catalogue_roses.pdf" data-catalogue="roses" class="btn flosun-button secondary-btn rounded-0"
                             target="_blank">VIEW
                             CATALOGUE</a>
                     </div>
@@ -428,22 +421,6 @@
                     <!--Single Banner Area End-->
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-custom">
-                    <!--Single Banner Area Start-->
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
-
-                        <!-- Slider Navigation -->
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <!-- Slider pagination -->
-                        <div class="swiper-pagination default-pagination "></div>
-                    </div>
-                    <!--Single Banner Area End-->
-                </div>
-            </div>
             <div class="row mb-30">
                 <div class="col-md-6 col-custom">
                     <div class="collection-content">
@@ -454,7 +431,6 @@
                         <div class="desc-content">
                            
                         </div>
-                        <a href="" class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-custom">
@@ -515,6 +491,149 @@
                     <!--Single Banner Area End-->
                 </div>
             </div>
+            <!-- Hydrangeas -->
+            <div class="row mb-50 align-items-center season-section" id="hydrangeas">
+                <div class="col-md-6 col-custom">
+                    <div class="collection-content">
+                        <div class="section-title text-left">
+                            <h3 class="section-title-3 pb-0">Hydrangeas</h3>
+                        </div>
+                        <div class="desc-content">
+                            <p>Fresh hydrangeas in classic and tinted colors, sold by stem or as ready-to-sell bunches.</p>
+                        </div>
+                        <a href="assets/catalogues/hydrangeas/01.webp" data-catalogue="hydrangeas" data-page="1"
+                            class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-custom">
+                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+                        <div class="swiper-wrapper">
+                            <div class="single-item swiper-slide">
+                                <div class="single-testimonial text-center">
+                                    <img src="assets/catalogues/hydrangeas/02.webp" alt="Hydrangeas catalogue page" loading="lazy" width="450" height="637">
+                                </div>
+                            </div>
+                            <div class="single-item swiper-slide">
+                                <div class="single-testimonial text-center">
+                                    <img src="assets/catalogues/hydrangeas/04.webp" alt="Hydrangeas catalogue page" loading="lazy" width="450" height="637">
+                                </div>
+                            </div>
+                            <div class="single-item swiper-slide">
+                                <div class="single-testimonial text-center">
+                                    <img src="assets/catalogues/hydrangeas/05.webp" alt="Hydrangeas catalogue page" loading="lazy" width="450" height="637">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
+                                class="lnr lnr-arrow-left"></i></div>
+                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
+                                class="lnr lnr-arrow-right"></i></div>
+                        <div class="swiper-pagination default-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Flower Boxes -->
+            <div class="row mb-50 align-items-center season-section" id="boxes">
+                <div class="col-md-6 col-custom">
+                    <div class="collection-content">
+                        <div class="section-title text-left">
+                            <h3 class="section-title-3 pb-0">Flower Boxes</h3>
+                        </div>
+                        <div class="desc-content">
+                            <p>Luxury boxes with roses in a wide range of colors, ready to give.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-custom">
+                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+                        <div class="swiper-wrapper">
+                            <div class="single-item swiper-slide">
+                                <div class="single-testimonial text-center">
+                                    <img src="assets/images/products/boxes/1.webp" alt="Luxury rose boxes in several colors" loading="lazy" width="450" height="675">
+                                </div>
+                            </div>
+                            <div class="single-item swiper-slide">
+                                <div class="single-testimonial text-center">
+                                    <img src="assets/images/products/boxes/2.webp" alt="Woman receiving a red rose box" loading="lazy" width="450" height="675">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
+                                class="lnr lnr-arrow-left"></i></div>
+                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
+                                class="lnr lnr-arrow-right"></i></div>
+                        <div class="swiper-pagination default-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Domes -->
+            <div class="row mb-50 align-items-center season-section" id="domes">
+                <div class="col-md-6 col-custom">
+                    <div class="collection-content">
+                        <div class="section-title text-left">
+                            <h3 class="section-title-3 pb-0">Domes</h3>
+                        </div>
+                        <div class="desc-content">
+                            <p>Everlasting roses under glass domes that last for years.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-custom">
+                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+                        <div class="swiper-wrapper">
+                            <div class="single-item swiper-slide">
+                                <div class="single-testimonial text-center">
+                                    <img src="assets/images/products/domes/1.webp" alt="Everlasting roses under glass domes" loading="lazy" width="450" height="675">
+                                </div>
+                            </div>
+                            <div class="single-item swiper-slide">
+                                <div class="single-testimonial text-center">
+                                    <img src="assets/images/products/domes/2.webp" alt="Father and daughter with rose domes" loading="lazy" width="450" height="675">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
+                                class="lnr lnr-arrow-left"></i></div>
+                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
+                                class="lnr lnr-arrow-right"></i></div>
+                        <div class="swiper-pagination default-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Corsages -->
+            <div class="row mb-50 align-items-center season-section" id="corsages">
+                <div class="col-md-6 col-custom">
+                    <div class="collection-content">
+                        <div class="section-title text-left">
+                            <h3 class="section-title-3 pb-0">Corsages</h3>
+                        </div>
+                        <div class="desc-content">
+                            <p>Wrist corsages for proms, weddings and special nights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-custom">
+                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+                        <div class="swiper-wrapper">
+                            <div class="single-item swiper-slide">
+                                <div class="single-testimonial text-center">
+                                    <img src="assets/images/products/corsages/1.webp" alt="Wrist corsages in glass domes" loading="lazy" width="450" height="675">
+                                </div>
+                            </div>
+                            <div class="single-item swiper-slide">
+                                <div class="single-testimonial text-center">
+                                    <img src="assets/images/products/corsages/2.webp" alt="Couples wearing corsages at prom night" loading="lazy" width="450" height="675">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
+                                class="lnr lnr-arrow-left"></i></div>
+                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
+                                class="lnr lnr-arrow-right"></i></div>
+                        <div class="swiper-pagination default-pagination"></div>
+                    </div>
+                </div>
+            </div>
             <div class="row mb-50 pt-no-text pb-no-text ">
                 <div class="col-md-6 col-custom">
                     <div class="collection-content">
@@ -525,8 +644,6 @@
                         <div class="desc-content">
                            
                         </div>
-                        <a href="" class="btn flosun-button secondary-btn rounded-0" target="_blank">VIEW
-                            CATALOGUE</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-custom">
@@ -704,6 +821,9 @@
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+    <!-- Catalogue flip book -->
+    <script src="assets/js/plugins/page-flip.browser.js"></script>
+    <script src="assets/js/catalogue-viewer.js"></script>
 </body>
 
 </html>

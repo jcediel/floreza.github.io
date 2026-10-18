@@ -7443,6 +7443,12 @@ video {
 @media (max-width: 767px) {
   .shop-collection-area .collection-content {
     padding-bottom: 30px;
+    /* columns stack on mobile, so the vertical centering trick above only shifts the text up over the previous block */
+    top: auto;
+    margin-top: 30px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
   }
 }
 
