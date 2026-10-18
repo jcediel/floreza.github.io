@@ -171,6 +171,16 @@ body.cv-open {
 }
 
 /* Season quick links */
+.season-nav {
+  margin-bottom: 60px;
+}
+
+@media (max-width: 767px) {
+  .season-nav {
+    margin-bottom: 40px;
+  }
+}
+
 .season-nav ul {
   display: flex;
   flex-wrap: wrap;
