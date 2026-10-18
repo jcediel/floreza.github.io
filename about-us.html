@@ -86,12 +86,12 @@
                         <div class="header-right-area main-nav">
                             <ul class="nav">
                                 <li class="account-menu-wrap d-none d-lg-flex">
-                                    <a href="#" class="off-canvas-menu-btn">
+                                    <a href="#" class="off-canvas-menu-btn" aria-label="About Floreza" aria-controls="sideMenu">
                                         <i class="fa fa-bars"></i>
                                     </a>
                                 </li>
                                 <li class="mobile-menu-btn d-lg-none">
-                                    <a class="off-canvas-btn" href="#">
+                                    <a class="off-canvas-btn" href="#" aria-label="Open menu" aria-controls="mobileMenu">
                                         <i class="fa fa-bars"></i>
                                     </a>
                                 </li>
@@ -103,107 +103,65 @@
         </div>
         <!-- Main Header Area End -->
         <!-- off-canvas menu start -->
-        <aside class="off-canvas-wrapper" id="mobileMenu">
+        <aside class="off-canvas-wrapper fz-drawer" id="mobileMenu" aria-label="Menu">
             <div class="off-canvas-overlay"></div>
             <div class="off-canvas-inner-content">
-                <div class="btn-close-off-canvas">
-                    <i class="fa fa-times"></i>
-                </div>
-                <div class="off-canvas-inner">                    
-                    <!-- mobile menu start -->
-                    <div class="mobile-navigation">
-                        <!-- mobile menu navigation start -->
-                        <nav>
-                            <ul class="mobile-menu">
-                                <li class="menu-item-has-children">
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="products.html">Products</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <!-- mobile menu navigation end -->
+                <div class="off-canvas-inner">
+                    <div class="fz-drawer__top">
+                        <img class="fz-drawer__logo" src="assets/images/logo/logo155x36-2.png" alt="Floreza" width="155" height="36">
+                        <button type="button" class="btn-close-off-canvas fz-drawer__close" aria-label="Close menu"><i class="fa fa-times"></i></button>
                     </div>
-                    <!-- mobile menu end -->
-                    <div class="offcanvas-widget-area">
-                        <div class="top-info-wrap text-left text-black">
-                            <ul class="address-info">
-                                <li>
-                                    <i class="fa fa-phone"></i>
-                                    <a href="info@florezaus.com"> (+1)305-505-8321</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope"></i>
-                                    <a href="info@florezaus.com">info@florezaus.com</a>
-                                </li>
-                            </ul>
-                            <div class="widget-social">
-                                <a class="facebook-color-bg" title="Facebook-f" href="https://www.facebook.com/floreza.flowers/"><i
-                                        class="fa fa-facebook-f"></i></a>
-                                <a class="linkedin-color-bg" title="Linkedin" href="https://www.linkedin.com/in/ana-may-luna-36a97799/"><i
-                                        class="fa fa-linkedin"></i></a>
-                                <a class="instagram-color-bg" title="Instagram" href="https://www.instagram.com/floreza_est1980"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
+                    <nav class="fz-drawer__nav" aria-label="Main">
+                        <ul>
+                            <li><a href="index.html"><span>01</span>Home</a></li>
+                            <li><a href="about-us.html" aria-current="page"><span>02</span>About Us</a></li>
+                            <li><a href="products.html"><span>03</span>Products</a></li>
+                            <li><a href="contact-us.html"><span>04</span>Contact</a></li>
+                        </ul>
+                    </nav>
+                    <ul class="fz-drawer__contact">
+                        <li><i class="lnr lnr-phone-handset" aria-hidden="true"></i><a href="tel:+13055058321">(+1) 305-505-8321</a></li>
+                        <li><i class="lnr lnr-envelope" aria-hidden="true"></i><a href="mailto:info@florezaus.com">info@florezaus.com</a></li>
+                        <li><i class="lnr lnr-map-marker" aria-hidden="true"></i><a href="https://www.google.com/maps/search/?api=1&amp;query=3400+NW+74th+Ave+Miami+FL+33122" target="_blank" rel="noopener">3400 NW 74th Ave, Miami, FL 33122</a></li>
+                    </ul>
+                    <div class="fz-drawer__social">
+                        <a href="https://www.facebook.com/floreza.flowers/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/ana-may-luna-36a97799/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/floreza_est1980" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
         </aside>
         <!-- off-canvas menu end -->
         <!-- off-canvas menu start -->
-        <aside class="off-canvas-menu-wrapper" id="sideMenu">
+        <aside class="off-canvas-menu-wrapper fz-drawer" id="sideMenu" aria-label="About Floreza">
             <div class="off-canvas-overlay"></div>
             <div class="off-canvas-inner-content">
                 <div class="off-canvas-inner">
-                    <div class="btn-close-off-canvas">
-                        <i class="fa fa-times"></i>
+                    <div class="fz-drawer__top">
+                        <img class="fz-drawer__logo" src="assets/images/logo/logo155x36-2.png" alt="Floreza" width="155" height="36">
+                        <button type="button" class="btn-close-off-canvas fz-drawer__close" aria-label="Close"><i class="fa fa-times"></i></button>
                     </div>
-                    <!-- offcanvas widget area start -->
-                    <div class="offcanvas-widget-area">
-                        <ul class="menu-top-menu">
-                            <li><a href="about-us.html">About Us</a></li>
-                        </ul>
-                        <p class="desc-content">
-                            Welcome to Floreza, we are dedicated to offering the finest
-                            and freshest cut flowers sourced globally. With a focus on
-                            quality, variety and service.
-                            <br>
-                            We are the importers and distributors with over 20 years of
-                            experience and ship across the United States.
-                            To ensure high-quality and fresh flowers, we only work with
-                            the best growers and providers. Our goal is to create
-                            diversity, innovation, and increase profits in your floral
-                            department.
-                            <br>
-                            At Floreza, we are dedicated to building the best and most
-                            efficient and cost-efficient floral program for your grocery or
-                            supermarket stores.  Our team works directly with you to
-                            understand the complexities of your business to create a
-                            program that brings the world’s best floral products to each
-                            of your retail stores.
-                        </p>
-                        <div class="top-info-wrap text-left text-black">
-                            <ul class="address-info">
-                                <li>
-                                    <i class="fa fa-phone"></i>
-                                    <a href="info@florezaus.com">(1) 305-505-8321</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope"></i>
-                                    <a href="info@florezaus.com">info@florezaus.com</a>
-                                </li>
-                            </ul>
-                            <div class="widget-social">
-                                <a class="facebook-color-bg" title="Facebook-f" href="https://www.facebook.com/floreza.flowers/"><i
-                                        class="fa fa-facebook-f"></i></a>
-                                <a class="linkedin-color-bg" title="Linkedin" href="https://www.linkedin.com/in/ana-may-luna-36a97799/"><i
-                                        class="fa fa-linkedin"></i></a>
-                                <a class="instagram-color-bg" title="Instagram" href="https://www.instagram.com/floreza_est1980"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
+                    <span class="fz-eyebrow">About Floreza</span>
+                    <h2 class="fz-drawer__title">Fresh cut flowers, <em>sourced globally</em></h2>
+                    <p class="fz-drawer__text">We import the finest and freshest cut flowers from all around the world and
+                        distribute them all across the United States, with a focus on quality, variety and service.</p>
+                    <div class="fz-drawer__photo">
+                        <img src="assets/images/partnering/4.webp" alt="Grower holding a bunch of pink roses" loading="lazy" width="900" height="900">
                     </div>
-                    <!-- offcanvas widget area end -->
+                    <p class="fz-drawer__text">Our team works directly with you to design a cost-efficient floral program
+                        for your grocery or supermarket stores.</p>
+                    <a class="fz-drawer__more" href="about-us.html">Read our story <span aria-hidden="true">&rarr;</span></a>
+                    <ul class="fz-drawer__contact">
+                        <li><i class="lnr lnr-phone-handset" aria-hidden="true"></i><a href="tel:+13055058321">(+1) 305-505-8321</a></li>
+                        <li><i class="lnr lnr-envelope" aria-hidden="true"></i><a href="mailto:info@florezaus.com">info@florezaus.com</a></li>
+                        <li><i class="lnr lnr-map-marker" aria-hidden="true"></i><a href="https://www.google.com/maps/search/?api=1&amp;query=3400+NW+74th+Ave+Miami+FL+33122" target="_blank" rel="noopener">3400 NW 74th Ave, Miami, FL 33122</a></li>
+                    </ul>
+                    <div class="fz-drawer__social">
+                        <a href="https://www.facebook.com/floreza.flowers/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/ana-may-luna-36a97799/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/floreza_est1980" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </aside>

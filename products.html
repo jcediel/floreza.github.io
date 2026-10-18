@@ -33,11 +33,15 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/catalogue-viewer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&display=swap">
     <link rel="stylesheet" href="assets/css/floreza.css">
+    <script>document.documentElement.classList.add('fz-js');</script>
 
 </head>
 
-<body>
+<body class="fz-products">
 
     <!-- Header Area Start Here -->
     <header class="main-header-area">
@@ -83,12 +87,12 @@
                         <div class="header-right-area main-nav">
                             <ul class="nav">
                                 <li class="account-menu-wrap d-none d-lg-flex">
-                                    <a href="#" class="off-canvas-menu-btn">
+                                    <a href="#" class="off-canvas-menu-btn" aria-label="About Floreza" aria-controls="sideMenu">
                                         <i class="fa fa-bars"></i>
                                     </a>
                                 </li>
                                 <li class="mobile-menu-btn d-lg-none">
-                                    <a class="off-canvas-btn" href="#">
+                                    <a class="off-canvas-btn" href="#" aria-label="Open menu" aria-controls="mobileMenu">
                                         <i class="fa fa-bars"></i>
                                     </a>
                                 </li>
@@ -100,947 +104,578 @@
         </div>
         <!-- Main Header Area End -->
         <!-- off-canvas menu start -->
-        <aside class="off-canvas-wrapper" id="mobileMenu">
+        <aside class="off-canvas-wrapper fz-drawer" id="mobileMenu" aria-label="Menu">
             <div class="off-canvas-overlay"></div>
             <div class="off-canvas-inner-content">
-                <div class="btn-close-off-canvas">
-                    <i class="fa fa-times"></i>
-                </div>
                 <div class="off-canvas-inner">
-                    
-                    <!-- mobile menu start -->
-                    <div class="mobile-navigation">
-                        <!-- mobile menu navigation start -->
-                        <nav>
-                            <ul class="mobile-menu">
-                                <li class="menu-item-has-children">
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="products.html">Products</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <!-- mobile menu navigation end -->
+                    <div class="fz-drawer__top">
+                        <img class="fz-drawer__logo" src="assets/images/logo/logo155x36-2.png" alt="Floreza" width="155" height="36">
+                        <button type="button" class="btn-close-off-canvas fz-drawer__close" aria-label="Close menu"><i class="fa fa-times"></i></button>
                     </div>
-                    <!-- mobile menu end -->
-                    <div class="offcanvas-widget-area">
-                        <div class="top-info-wrap text-left text-black">
-                            <ul class="address-info">
-                                <li>
-                                    <i class="fa fa-phone"></i>
-                                    <a href="info@florezaus.com"> (+1)305-505-8321</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope"></i>
-                                    <a href="info@florezaus.com">info@florezaus.com</a>
-                                </li>
-                            </ul>
-                            <div class="widget-social">
-                                <a class="facebook-color-bg" title="Facebook-f" href="https://www.facebook.com/floreza.flowers/"><i
-                                        class="fa fa-facebook-f"></i></a>
-                                <a class="linkedin-color-bg" title="Linkedin" href="https://www.linkedin.com/in/ana-may-luna-36a97799/"><i
-                                        class="fa fa-linkedin"></i></a>
-                                <a class="instagram-color-bg" title="Instagram" href="https://www.instagram.com/floreza_est1980"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
+                    <nav class="fz-drawer__nav" aria-label="Main">
+                        <ul>
+                            <li><a href="index.html"><span>01</span>Home</a></li>
+                            <li><a href="about-us.html"><span>02</span>About Us</a></li>
+                            <li><a href="products.html" aria-current="page"><span>03</span>Products</a></li>
+                            <li><a href="contact-us.html"><span>04</span>Contact</a></li>
+                        </ul>
+                    </nav>
+                    <ul class="fz-drawer__contact">
+                        <li><i class="lnr lnr-phone-handset" aria-hidden="true"></i><a href="tel:+13055058321">(+1) 305-505-8321</a></li>
+                        <li><i class="lnr lnr-envelope" aria-hidden="true"></i><a href="mailto:info@florezaus.com">info@florezaus.com</a></li>
+                        <li><i class="lnr lnr-map-marker" aria-hidden="true"></i><a href="https://www.google.com/maps/search/?api=1&amp;query=3400+NW+74th+Ave+Miami+FL+33122" target="_blank" rel="noopener">3400 NW 74th Ave, Miami, FL 33122</a></li>
+                    </ul>
+                    <div class="fz-drawer__social">
+                        <a href="https://www.facebook.com/floreza.flowers/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/ana-may-luna-36a97799/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/floreza_est1980" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
         </aside>
         <!-- off-canvas menu end -->
         <!-- off-canvas menu start -->
-        <aside class="off-canvas-menu-wrapper" id="sideMenu">
+        <aside class="off-canvas-menu-wrapper fz-drawer" id="sideMenu" aria-label="About Floreza">
             <div class="off-canvas-overlay"></div>
             <div class="off-canvas-inner-content">
                 <div class="off-canvas-inner">
-                    <div class="btn-close-off-canvas">
-                        <i class="fa fa-times"></i>
+                    <div class="fz-drawer__top">
+                        <img class="fz-drawer__logo" src="assets/images/logo/logo155x36-2.png" alt="Floreza" width="155" height="36">
+                        <button type="button" class="btn-close-off-canvas fz-drawer__close" aria-label="Close"><i class="fa fa-times"></i></button>
                     </div>
-                    <!-- offcanvas widget area start -->
-                    <div class="offcanvas-widget-area">
-                        <ul class="menu-top-menu">
-                            <li><a href="about-us.html">About Us</a></li>
-                        </ul>
-                        <p class="desc-content">
-                            Welcome to Floreza, we are dedicated to offering the finest
-                            and freshest cut flowers sourced globally. With a focus on
-                            quality, variety and service.
-                            <br>
-                            We are the importers and distributors with over 20 years of
-                            experience and ship across the United States.
-                            To ensure high-quality and fresh flowers, we only work with
-                            the best growers and providers. Our goal is to create
-                            diversity, innovation, and increase profits in your floral
-                            department.
-                            <br>
-                            At Floreza, we are dedicated to building the best and most
-                            efficient and cost-efficient floral program for your grocery or
-                            supermarket stores.  Our team works directly with you to
-                            understand the complexities of your business to create a
-                            program that brings the world’s best floral products to each
-                            of your retail stores.
-                        </p>
-                        <div class="top-info-wrap text-left text-black">
-                            <ul class="address-info">
-                                <li>
-                                    <i class="fa fa-phone"></i>
-                                    <a href="info@florezaus.com">(1) 305-505-8321</a>
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope"></i>
-                                    <a href="info@florezaus.com">info@florezaus.com</a>
-                                </li>
-                            </ul>
-                            <div class="widget-social">
-                                <a class="facebook-color-bg" title="Facebook-f" href="https://www.facebook.com/floreza.flowers/"><i
-                                        class="fa fa-facebook-f"></i></a>
-                                <a class="linkedin-color-bg" title="Linkedin" href="https://www.linkedin.com/in/ana-may-luna-36a97799/"><i
-                                        class="fa fa-linkedin"></i></a>
-                                <a class="instagram-color-bg" title="Instagram" href="https://www.instagram.com/floreza_est1980"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
+                    <span class="fz-eyebrow">About Floreza</span>
+                    <h2 class="fz-drawer__title">Fresh cut flowers, <em>sourced globally</em></h2>
+                    <p class="fz-drawer__text">We import the finest and freshest cut flowers from all around the world and
+                        distribute them all across the United States, with a focus on quality, variety and service.</p>
+                    <div class="fz-drawer__photo">
+                        <img src="assets/images/partnering/4.webp" alt="Grower holding a bunch of pink roses" loading="lazy" width="900" height="900">
                     </div>
-                    <!-- offcanvas widget area end -->
+                    <p class="fz-drawer__text">Our team works directly with you to design a cost-efficient floral program
+                        for your grocery or supermarket stores.</p>
+                    <a class="fz-drawer__more" href="about-us.html">Read our story <span aria-hidden="true">&rarr;</span></a>
+                    <ul class="fz-drawer__contact">
+                        <li><i class="lnr lnr-phone-handset" aria-hidden="true"></i><a href="tel:+13055058321">(+1) 305-505-8321</a></li>
+                        <li><i class="lnr lnr-envelope" aria-hidden="true"></i><a href="mailto:info@florezaus.com">info@florezaus.com</a></li>
+                        <li><i class="lnr lnr-map-marker" aria-hidden="true"></i><a href="https://www.google.com/maps/search/?api=1&amp;query=3400+NW+74th+Ave+Miami+FL+33122" target="_blank" rel="noopener">3400 NW 74th Ave, Miami, FL 33122</a></li>
+                    </ul>
+                    <div class="fz-drawer__social">
+                        <a href="https://www.facebook.com/floreza.flowers/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/ana-may-luna-36a97799/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/floreza_est1980" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </aside>
         <!-- off-canvas menu end -->
     </header>
     <!-- Header Area End Here -->
-    <!-- Breadcrumb Area Start Here -->
-    <div class="breadcrumbs-area-product position-relative">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="breadcrumb-content position-relative section-content">
-                        <h1 class="title-3 text-white">Products</h1>
+    <!-- Products hero -->
+    <section class="fz-page-hero fz-prod-hero">
+        <div class="container custom-area">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-custom" data-reveal>
+                    <span class="fz-eyebrow">Our Flowers</span>
+                    <h1 class="fz-heading">From the farm <em>to your stores</em></h1>
+                    <p class="fz-page-hero__lead">Year-round favorites, seasonal collections and ready-to-browse
+                        catalogues for your floral department.</p>
+                    <div class="fz-hero__actions">
+                        <a href="#our-products" class="fz-btn fz-btn--plum">Our Products</a>
+                        <a href="#seasonal" class="fz-btn fz-btn--line">Seasonal</a>
+                        <a href="#catalogues" class="fz-btn fz-btn--line">Catalogues</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-custom">
+                    <div class="fz-fan" aria-hidden="true">
+                        <div class="fz-fan__card fz-fan__card--1"><img src="assets/images/products/boutique/9.webp" alt="" width="900" height="900"></div>
+                        <div class="fz-fan__card fz-fan__card--2"><img src="assets/images/seasonal/valentines/1.webp" alt="" width="900" height="1350"></div>
+                        <div class="fz-fan__card fz-fan__card--3"><img src="assets/images/products/domes/1.webp" alt="" width="900" height="1350"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-
-    <div class="shop-collection-area pt-no-text pb-no-text">
+    <section class="fz-block">
         <div class="container custom-area">
-            <nav class="season-nav mb-50" aria-label="Page sections">
-                <ul><li><a href="#our-products">Our Products</a></li><li><a href="#seasonal">Seasonal Collections</a></li><li><a href="#catalogues">Catalogues</a></li></ul>
-            </nav>
-            <div class="row" id="our-products">
-                <div class="col-12 col-custom">
-                    <div class="section-title text-center">
-                        <h2 class="section-title-3">Our Products</h2>
-                    </div>
-                </div>
-            </div>
-            <nav class="season-nav mb-50" aria-label="Products">
+            <header class="fz-block__head" id="our-products" data-reveal>
+                <span class="fz-eyebrow">Year round</span>
+                <h2 class="fz-heading">Our <em>products</em></h2>
+                <p>Fresh flowers, greens and gifts available all year.</p>
+            </header>
+            <nav class="fz-chips" aria-label="Products">
                 <ul><li><a href="#bouquets">Bouquets &amp; Arrangements</a></li><li><a href="#roses">Roses</a></li><li><a href="#hydrangeas">Hydrangeas</a></li><li><a href="#green">Greens</a></li><li><a href="#boxes">Flower Boxes</a></li><li><a href="#domes">Domes</a></li><li><a href="#corsages">Corsages</a></li><li><a href="#other-products">Other Products</a></li></ul>
             </nav>
-            <!-- Bouquets & Arrangements -->
-            <div class="row mb-50 align-items-center season-section" id="bouquets">
-                <div class="col-md-6 col-custom">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Bouquets &amp; Arrangements</h3>
+            <article class="fz-prod fz-prod--contain" id="bouquets">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="assets/images/products/boutique/2.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/boutique/3.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/boutique/4.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/boutique/5.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/boutique/6.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/boutique/7.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/boutique/8.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/boutique/9.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/boutique/12.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/boutique/13.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450"></div>
                         </div>
-                        <div class="desc-content">
-                            <p>Ready-to-sell bouquets and arrangements in mixed flowers and colors for every occasion.</p>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
                         </div>
+                    </div>
+                </div>
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">01</span>
+                    <h3 class="fz-prod__title">Bouquets &amp; Arrangements</h3>
+                    <p class="fz-prod__desc">Ready-to-sell bouquets and arrangements in mixed flowers and colors for every occasion.</p>
+                    <p class="fz-prod__meta">10 photos &middot; catalogue available</p>
                         <a href="assets/catalogues/bouquets/01.webp" data-catalogue="bouquets" data-page="1"
-                            class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
-                    </div>
+                            class="fz-btn fz-btn--plum">View catalogue <span aria-hidden="true">&rarr;</span></a>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+            </article>
+            <article class="fz-prod fz-prod--reverse fz-prod--contain" id="roses">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boutique/2.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boutique/3.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boutique/4.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boutique/5.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boutique/6.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boutique/7.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boutique/8.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boutique/9.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boutique/12.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boutique/13.webp" alt="Floreza mixed bouquet" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/products/roses/1.webp" alt="Roses" loading="lazy" width="450" height="377"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/roses/2.webp" alt="Roses" loading="lazy" width="450" height="431"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/roses/3.webp" alt="Roses" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/roses/4.webp" alt="Roses" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/roses/5.webp" alt="Roses" loading="lazy" width="450" height="438"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/roses/6.webp" alt="Roses" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/roses/7.webp" alt="Roses" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/roses/8.webp" alt="Roses" loading="lazy" width="450" height="387"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Roses -->
-            <div class="row mb-50 align-items-center season-section" id="roses">
-                <div class="col-md-6 col-custom order-md-2">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Roses</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Premium roses in a wide range of colors, by the bunch or in bouquets.</p>
-                        </div>
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">02</span>
+                    <h3 class="fz-prod__title">Roses</h3>
+                    <p class="fz-prod__desc">Premium roses in a wide range of colors, by the bunch or in bouquets.</p>
+                    <p class="fz-prod__meta">8 photos &middot; catalogue available</p>
                         <a href="assets/catalogues/roses/01.webp" data-catalogue="roses" data-page="1"
-                            class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
-                    </div>
+                            class="fz-btn fz-btn--plum">View catalogue <span aria-hidden="true">&rarr;</span></a>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+            </article>
+            <article class="fz-prod fz-prod--contain" id="hydrangeas">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/roses/1.webp" alt="Roses" loading="lazy" width="450" height="377">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/roses/2.webp" alt="Roses" loading="lazy" width="450" height="431">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/roses/3.webp" alt="Roses" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/roses/4.webp" alt="Roses" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/roses/5.webp" alt="Roses" loading="lazy" width="450" height="438">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/roses/6.webp" alt="Roses" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/roses/7.webp" alt="Roses" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/roses/8.webp" alt="Roses" loading="lazy" width="450" height="387">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/catalogues/hydrangeas/02.webp" alt="Hydrangeas catalogue page" loading="lazy" width="450" height="637"></div>
+                            <div class="swiper-slide"><img src="assets/catalogues/hydrangeas/04.webp" alt="Hydrangeas catalogue page" loading="lazy" width="450" height="637"></div>
+                            <div class="swiper-slide"><img src="assets/catalogues/hydrangeas/05.webp" alt="Hydrangeas catalogue page" loading="lazy" width="450" height="637"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Hydrangeas -->
-            <div class="row mb-50 align-items-center season-section" id="hydrangeas">
-                <div class="col-md-6 col-custom">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Hydrangeas</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Fresh hydrangeas in classic and tinted colors, sold by stem or as ready-to-sell bunches.</p>
-                        </div>
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">03</span>
+                    <h3 class="fz-prod__title">Hydrangeas</h3>
+                    <p class="fz-prod__desc">Fresh hydrangeas in classic and tinted colors, sold by stem or as ready-to-sell bunches.</p>
+                    <p class="fz-prod__meta">3 photos &middot; catalogue available</p>
                         <a href="assets/catalogues/hydrangeas/01.webp" data-catalogue="hydrangeas" data-page="1"
-                            class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
-                    </div>
+                            class="fz-btn fz-btn--plum">View catalogue <span aria-hidden="true">&rarr;</span></a>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+            </article>
+            <article class="fz-prod fz-prod--reverse fz-prod--contain" id="green">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/catalogues/hydrangeas/02.webp" alt="Hydrangeas catalogue page" loading="lazy" width="450" height="637">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/catalogues/hydrangeas/04.webp" alt="Hydrangeas catalogue page" loading="lazy" width="450" height="637">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/catalogues/hydrangeas/05.webp" alt="Hydrangeas catalogue page" loading="lazy" width="450" height="637">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/products/green/1.webp" alt="Fresh greens and foliage" loading="lazy" width="450" height="348"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/green/2.webp" alt="Fresh greens and foliage" loading="lazy" width="450" height="550"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/green/3.webp" alt="Fresh greens and foliage" loading="lazy" width="450" height="430"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/green/4.webp" alt="Fresh greens and foliage" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/green/5.webp" alt="Fresh greens and foliage" loading="lazy" width="450" height="352"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/green/6.webp" alt="Fresh greens and foliage" loading="lazy" width="450" height="447"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Greens -->
-            <div class="row mb-50 align-items-center season-section" id="green">
-                <div class="col-md-6 col-custom order-md-2">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Greens</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Eucalyptus, ruscus, dusty miller and other fresh foliage to complete every bouquet.</p>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">04</span>
+                    <h3 class="fz-prod__title">Greens</h3>
+                    <p class="fz-prod__desc">Eucalyptus, ruscus, dusty miller and other fresh foliage to complete every bouquet.</p>
+                    <p class="fz-prod__meta">6 photos</p>
+                </div>
+            </article>
+            <article class="fz-prod" id="boxes">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/green/1.webp" alt="Fresh greens and foliage" loading="lazy" width="450" height="348">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/green/2.webp" alt="Fresh greens and foliage" loading="lazy" width="450" height="550">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/green/3.webp" alt="Fresh greens and foliage" loading="lazy" width="450" height="430">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/green/4.webp" alt="Fresh greens and foliage" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/green/5.webp" alt="Fresh greens and foliage" loading="lazy" width="450" height="352">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/green/6.webp" alt="Fresh greens and foliage" loading="lazy" width="450" height="447">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/products/boxes/1.webp" alt="Luxury rose boxes in several colors" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/boxes/2.webp" alt="Woman receiving a red rose box" loading="lazy" width="450" height="675"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Flower Boxes -->
-            <div class="row mb-50 align-items-center season-section" id="boxes">
-                <div class="col-md-6 col-custom">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Flower Boxes</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Luxury boxes with roses in a wide range of colors, ready to give.</p>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">05</span>
+                    <h3 class="fz-prod__title">Flower Boxes</h3>
+                    <p class="fz-prod__desc">Luxury boxes with roses in a wide range of colors, ready to give.</p>
+                    <p class="fz-prod__meta">2 photos</p>
+                </div>
+            </article>
+            <article class="fz-prod fz-prod--reverse" id="domes">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boxes/1.webp" alt="Luxury rose boxes in several colors" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/boxes/2.webp" alt="Woman receiving a red rose box" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/products/domes/1.webp" alt="Everlasting roses under glass domes" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/domes/2.webp" alt="Father and daughter with rose domes" loading="lazy" width="450" height="675"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Domes -->
-            <div class="row mb-50 align-items-center season-section" id="domes">
-                <div class="col-md-6 col-custom order-md-2">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Domes</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Everlasting roses under glass domes that last for years.</p>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">06</span>
+                    <h3 class="fz-prod__title">Domes</h3>
+                    <p class="fz-prod__desc">Everlasting roses under glass domes that last for years.</p>
+                    <p class="fz-prod__meta">2 photos</p>
+                </div>
+            </article>
+            <article class="fz-prod" id="corsages">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/domes/1.webp" alt="Everlasting roses under glass domes" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/domes/2.webp" alt="Father and daughter with rose domes" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/products/corsages/1.webp" alt="Wrist corsages in glass domes" loading="lazy" width="450" height="642"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/corsages/2.webp" alt="Couples wearing corsages at prom night" loading="lazy" width="450" height="675"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Corsages -->
-            <div class="row mb-50 align-items-center season-section" id="corsages">
-                <div class="col-md-6 col-custom">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Corsages</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Wrist corsages for proms, weddings and special nights.</p>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">07</span>
+                    <h3 class="fz-prod__title">Corsages</h3>
+                    <p class="fz-prod__desc">Wrist corsages for proms, weddings and special nights.</p>
+                    <p class="fz-prod__meta">2 photos</p>
+                </div>
+            </article>
+            <article class="fz-prod fz-prod--reverse fz-prod--contain" id="other-products">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/corsages/1.webp" alt="Wrist corsages in glass domes" loading="lazy" width="450" height="642">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/corsages/2.webp" alt="Couples wearing corsages at prom night" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/products/solidos/6.webp" alt="Fresh flower stems" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/solidos/7.webp" alt="Fresh flower stems" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/solidos/8.webp" alt="Fresh flower stems" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/solidos/9.webp" alt="Fresh flower stems" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/solidos/2.webp" alt="Fresh flower stems" loading="lazy" width="450" height="450"></div>
+                            <div class="swiper-slide"><img src="assets/images/products/solidos/4.webp" alt="Fresh flower stems" loading="lazy" width="450" height="450"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Other Products -->
-            <div class="row mb-50 align-items-center season-section" id="other-products">
-                <div class="col-md-6 col-custom order-md-2">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Other Products</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Lilies, alstroemerias, disbud mums, eryngium and more fresh flowers to complete your assortment.</p>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
-                        <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/solidos/6.webp" alt="Fresh flower stems" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/solidos/7.webp" alt="Fresh flower stems" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/solidos/8.webp" alt="Fresh flower stems" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/solidos/9.webp" alt="Fresh flower stems" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/solidos/2.webp" alt="Fresh flower stems" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/products/solidos/4.webp" alt="Fresh flower stems" loading="lazy" width="450" height="450">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
-                    </div>
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">08</span>
+                    <h3 class="fz-prod__title">Other Products</h3>
+                    <p class="fz-prod__desc">Lilies, alstroemerias, disbud mums, eryngium and more fresh flowers to complete your assortment.</p>
+                    <p class="fz-prod__meta">6 photos</p>
                 </div>
-            </div>
-            <div class="row" id="seasonal">
-                <div class="col-12 col-custom">
-                    <div class="section-title text-center">
-                        <h2 class="section-title-3">Seasonal Collections</h2>
-                    </div>
-                </div>
-            </div>
-            <nav class="season-nav mb-50" aria-label="Seasons">
+            </article>
+        </div>
+    </section>
+
+    <section class="fz-block fz-block--sand">
+        <div class="container custom-area">
+            <header class="fz-block__head" id="seasonal" data-reveal>
+                <span class="fz-eyebrow">Celebrate every season</span>
+                <h2 class="fz-heading">Seasonal <em>collections</em></h2>
+                <p>Ready for every holiday on the calendar, from Valentine’s Day to the New Year.</p>
+            </header>
+            <nav class="fz-chips" aria-label="Seasons">
                 <ul><li><a href="#valentines">Valentine&#x27;s Day</a></li><li><a href="#st-patricks">St. Patrick&#x27;s Day</a></li><li><a href="#mothers-day">Mother&#x27;s Day</a></li><li><a href="#fathers-day">Father&#x27;s Day</a></li><li><a href="#halloween">Halloween</a></li><li><a href="#thanksgiving">Thanksgiving</a></li><li><a href="#christmas">Christmas</a></li><li><a href="#winter">Winter &amp; New Year</a></li></ul>
             </nav>
-            <!-- Valentine's Day -->
-            <div class="row mb-50 align-items-center season-section" id="valentines">
-                <div class="col-md-6 col-custom">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Valentine&#x27;s Day</h3>
+            <article class="fz-prod" id="valentines">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="assets/images/seasonal/valentines/1.webp" alt="Valentine&#x27;s Day bouquets in pink and red" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/valentines/2.webp" alt="Everlasting roses in glass globes for Valentine&#x27;s Day" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/valentines/3.webp" alt="Couple exchanging rose globes" loading="lazy" width="450" height="671"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/valentines/4.webp" alt="Couple with a red rose bouquet" loading="lazy" width="450" height="675"></div>
                         </div>
-                        <div class="desc-content">
-                            <p>Red roses, everlasting roses in glass globes and romantic bouquets to say it all on February 14.</p>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
                         </div>
+                    </div>
+                </div>
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">01</span>
+                    <h3 class="fz-prod__title">Valentine&#x27;s Day</h3>
+                    <p class="fz-prod__desc">Red roses, everlasting roses in glass globes and romantic bouquets to say it all on February 14.</p>
+                    <p class="fz-prod__meta">4 photos &middot; catalogue available</p>
                         <a href="assets/catalogues/holidays/01.webp" data-catalogue="holidays" data-page="1"
-                            class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
-                    </div>
+                            class="fz-btn fz-btn--plum">View catalogue <span aria-hidden="true">&rarr;</span></a>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+            </article>
+            <article class="fz-prod fz-prod--reverse" id="st-patricks">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/valentines/1.webp" alt="Valentine&#x27;s Day bouquets in pink and red" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/valentines/2.webp" alt="Everlasting roses in glass globes for Valentine&#x27;s Day" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/valentines/3.webp" alt="Couple exchanging rose globes" loading="lazy" width="450" height="671">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/valentines/4.webp" alt="Couple with a red rose bouquet" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/st-patricks/1.webp" alt="Friends holding green rose globes" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/st-patricks/2.webp" alt="Family with green and yellow bouquets" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/st-patricks/3.webp" alt="St. Patrick&#x27;s Day spring bouquets" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/st-patricks/4.webp" alt="Green roses in glass globes" loading="lazy" width="450" height="540"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- St. Patrick's Day -->
-            <div class="row mb-50 align-items-center season-section" id="st-patricks">
-                <div class="col-md-6 col-custom order-md-2">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">St. Patrick&#x27;s Day</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Green roses, lucky flower globes and spring bouquets for March 17.</p>
-                        </div>
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">02</span>
+                    <h3 class="fz-prod__title">St. Patrick&#x27;s Day</h3>
+                    <p class="fz-prod__desc">Green roses, lucky flower globes and spring bouquets for March 17.</p>
+                    <p class="fz-prod__meta">4 photos &middot; catalogue available</p>
                         <a href="assets/catalogues/holidays/04.webp" data-catalogue="holidays" data-page="4"
-                            class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
-                    </div>
+                            class="fz-btn fz-btn--plum">View catalogue <span aria-hidden="true">&rarr;</span></a>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+            </article>
+            <article class="fz-prod" id="mothers-day">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/st-patricks/1.webp" alt="Friends holding green rose globes" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/st-patricks/2.webp" alt="Family with green and yellow bouquets" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/st-patricks/3.webp" alt="St. Patrick&#x27;s Day spring bouquets" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/st-patricks/4.webp" alt="Green roses in glass globes" loading="lazy" width="450" height="540">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/mothers-day/1.webp" alt="Mother&#x27;s Day bouquets on display" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/mothers-day/2.webp" alt="Mother and daughter with colorful bouquets" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/mothers-day/3.webp" alt="Mother and daughter with a rose globe" loading="lazy" width="450" height="671"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/mothers-day/4.webp" alt="Colorful everlasting roses in glass globes" loading="lazy" width="450" height="671"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Mother's Day -->
-            <div class="row mb-50 align-items-center season-section" id="mothers-day">
-                <div class="col-md-6 col-custom">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Mother&#x27;s Day</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Colorful bouquets and everlasting roses to celebrate mom.</p>
-                        </div>
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">03</span>
+                    <h3 class="fz-prod__title">Mother&#x27;s Day</h3>
+                    <p class="fz-prod__desc">Colorful bouquets and everlasting roses to celebrate mom.</p>
+                    <p class="fz-prod__meta">4 photos &middot; catalogue available</p>
                         <a href="assets/catalogues/holidays/03.webp" data-catalogue="holidays" data-page="3"
-                            class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
-                    </div>
+                            class="fz-btn fz-btn--plum">View catalogue <span aria-hidden="true">&rarr;</span></a>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+            </article>
+            <article class="fz-prod fz-prod--reverse" id="fathers-day">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/mothers-day/1.webp" alt="Mother&#x27;s Day bouquets on display" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/mothers-day/2.webp" alt="Mother and daughter with colorful bouquets" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/mothers-day/3.webp" alt="Mother and daughter with a rose globe" loading="lazy" width="450" height="671">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/mothers-day/4.webp" alt="Colorful everlasting roses in glass globes" loading="lazy" width="450" height="671">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/fathers-day/1.webp" alt="Father&#x27;s Day bouquets with sunflowers" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/fathers-day/2.webp" alt="Girl giving her dad a sunflower bouquet" loading="lazy" width="450" height="675"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Father's Day -->
-            <div class="row mb-50 align-items-center season-section" id="fathers-day">
-                <div class="col-md-6 col-custom order-md-2">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Father&#x27;s Day</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Sunflowers and bold arrangements with a gentleman&#x27;s touch.</p>
-                        </div>
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">04</span>
+                    <h3 class="fz-prod__title">Father&#x27;s Day</h3>
+                    <p class="fz-prod__desc">Sunflowers and bold arrangements with a gentleman&#x27;s touch.</p>
+                    <p class="fz-prod__meta">2 photos &middot; catalogue available</p>
                         <a href="assets/catalogues/seasonal-celebration/01.webp" data-catalogue="seasonal-celebration" data-page="1"
-                            class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
-                    </div>
+                            class="fz-btn fz-btn--plum">View catalogue <span aria-hidden="true">&rarr;</span></a>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+            </article>
+            <article class="fz-prod" id="halloween">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/fathers-day/1.webp" alt="Father&#x27;s Day bouquets with sunflowers" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/fathers-day/2.webp" alt="Girl giving her dad a sunflower bouquet" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/halloween/1.webp" alt="Family holding Halloween flower globes" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/halloween/2.webp" alt="Halloween flower globes on display" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/halloween/3.webp" alt="Couple with Halloween bouquets" loading="lazy" width="450" height="675"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Halloween -->
-            <div class="row mb-50 align-items-center season-section" id="halloween">
-                <div class="col-md-6 col-custom">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Halloween</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Pumpkin tones, spooky flower globes and dark bouquets for October 31.</p>
-                        </div>
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">05</span>
+                    <h3 class="fz-prod__title">Halloween</h3>
+                    <p class="fz-prod__desc">Pumpkin tones, spooky flower globes and dark bouquets for October 31.</p>
+                    <p class="fz-prod__meta">3 photos &middot; catalogue available</p>
                         <a href="assets/catalogues/halloween/01.webp" data-catalogue="halloween" data-page="1"
-                            class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
-                    </div>
+                            class="fz-btn fz-btn--plum">View catalogue <span aria-hidden="true">&rarr;</span></a>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+            </article>
+            <article class="fz-prod fz-prod--reverse" id="thanksgiving">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/halloween/1.webp" alt="Family holding Halloween flower globes" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/halloween/2.webp" alt="Halloween flower globes on display" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/halloween/3.webp" alt="Couple with Halloween bouquets" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/thanksgiving/1.webp" alt="Thanksgiving bouquets in autumn colors" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/thanksgiving/2.webp" alt="Family with Thanksgiving bouquets" loading="lazy" width="450" height="540"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Thanksgiving -->
-            <div class="row mb-50 align-items-center season-section" id="thanksgiving">
-                <div class="col-md-6 col-custom order-md-2">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Thanksgiving</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Warm autumn colors to fill the table with gratitude.</p>
-                        </div>
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">06</span>
+                    <h3 class="fz-prod__title">Thanksgiving</h3>
+                    <p class="fz-prod__desc">Warm autumn colors to fill the table with gratitude.</p>
+                    <p class="fz-prod__meta">2 photos &middot; catalogue available</p>
                         <a href="assets/catalogues/minor-holidays/01.webp" data-catalogue="minor-holidays" data-page="1"
-                            class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
-                    </div>
+                            class="fz-btn fz-btn--plum">View catalogue <span aria-hidden="true">&rarr;</span></a>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+            </article>
+            <article class="fz-prod" id="christmas">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/thanksgiving/1.webp" alt="Thanksgiving bouquets in autumn colors" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/thanksgiving/2.webp" alt="Family with Thanksgiving bouquets" loading="lazy" width="450" height="540">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/christmas/1.webp" alt="Christmas bouquets on display" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/christmas/2.webp" alt="Christmas flower globes on display" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/christmas/3.webp" alt="Family with Christmas flower globes" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/christmas/4.webp" alt="Family with Christmas bouquets" loading="lazy" width="450" height="675"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Christmas -->
-            <div class="row mb-50 align-items-center season-section" id="christmas">
-                <div class="col-md-6 col-custom">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Christmas</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Flower globes, festive bouquets and holiday arrangements for the most wonderful time of the year.</p>
-                        </div>
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">07</span>
+                    <h3 class="fz-prod__title">Christmas</h3>
+                    <p class="fz-prod__desc">Flower globes, festive bouquets and holiday arrangements for the most wonderful time of the year.</p>
+                    <p class="fz-prod__meta">4 photos &middot; catalogue available</p>
                         <a href="assets/catalogues/holidays/06.webp" data-catalogue="holidays" data-page="6"
-                            class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
-                    </div>
+                            class="fz-btn fz-btn--plum">View catalogue <span aria-hidden="true">&rarr;</span></a>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
+            </article>
+            <article class="fz-prod fz-prod--reverse" id="winter">
+                <div class="fz-prod__media" data-reveal>
+                    <div class="fz-prod__arch testimonial-carousel swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/christmas/1.webp" alt="Christmas bouquets on display" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/christmas/2.webp" alt="Christmas flower globes on display" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/christmas/3.webp" alt="Family with Christmas flower globes" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/christmas/4.webp" alt="Family with Christmas bouquets" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/winter/1.webp" alt="Family with winter bouquets in the snow" loading="lazy" width="450" height="675"></div>
+                            <div class="swiper-slide"><img src="assets/images/seasonal/winter/2.webp" alt="Winter bouquets on display in the snow" loading="lazy" width="450" height="675"></div>
                         </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
+                        <div class="fz-prod__nav">
+                            <button type="button" class="home1-slider-prev" aria-label="Previous photo"><i class="lnr lnr-arrow-left"></i></button>
+                            <button type="button" class="home1-slider-next" aria-label="Next photo"><i class="lnr lnr-arrow-right"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Winter & New Year -->
-            <div class="row mb-50 align-items-center season-section" id="winter">
-                <div class="col-md-6 col-custom order-md-2">
-                    <div class="collection-content">
-                        <div class="section-title text-left">
-                            <h3 class="section-title-3 pb-0">Winter &amp; New Year</h3>
-                        </div>
-                        <div class="desc-content">
-                            <p>Seasonal bouquets for the cold months and to welcome the New Year.</p>
-                        </div>
+                <div class="fz-prod__text" data-reveal style="--d: .12s">
+                    <span class="fz-prod__num" aria-hidden="true">08</span>
+                    <h3 class="fz-prod__title">Winter &amp; New Year</h3>
+                    <p class="fz-prod__desc">Seasonal bouquets for the cold months and to welcome the New Year.</p>
+                    <p class="fz-prod__meta">2 photos &middot; catalogue available</p>
                         <a href="assets/catalogues/minor-holidays/14.webp" data-catalogue="minor-holidays" data-page="14"
-                            class="btn flosun-button secondary-btn rounded-0">VIEW CATALOGUE</a>
-                    </div>
+                            class="fz-btn fz-btn--plum">View catalogue <span aria-hidden="true">&rarr;</span></a>
                 </div>
-                <div class="col-md-6 col-custom">
-                    <div class="testimonial-carousel swiper-container intro11-carousel-wrap arrow-style-2">
-                        <div class="swiper-wrapper">
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/winter/1.webp" alt="Family with winter bouquets in the snow" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                            <div class="single-item swiper-slide">
-                                <div class="single-testimonial text-center">
-                                    <img src="assets/images/seasonal/winter/2.webp" alt="Winter bouquets on display in the snow" loading="lazy" width="450" height="675">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="home1-slider-prev swiper-button-prev main-slider-nav"><i
-                                class="lnr lnr-arrow-left"></i></div>
-                        <div class="home1-slider-next swiper-button-next main-slider-nav"><i
-                                class="lnr lnr-arrow-right"></i></div>
-                        <div class="swiper-pagination default-pagination"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="catalogues">
-                <div class="col-12 col-custom">
-                    <div class="section-title text-center">
-                        <h2 class="section-title-3">Our Catalogues</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb-50">
-                <div class="col-6 col-lg-3 col-custom mb-30 catalogue-card-wrap">
-                    <a class="catalogue-card" href="assets/catalogues/holidays/01.webp" data-catalogue="holidays">
+            </article>
+        </div>
+    </section>
+
+    <section class="fz-block fz-block--plum">
+        <div class="container custom-area">
+            <header class="fz-block__head" id="catalogues" data-reveal>
+                <span class="fz-eyebrow">Browse or download</span>
+                <h2 class="fz-heading">Our <em>catalogues</em></h2>
+                <p>Flip through them right here, or download the PDF to share with your team.</p>
+            </header>
+            <div class="fz-cats">
+                <div class="fz-cat" data-reveal>
+                    <a class="fz-cat__cover" href="assets/catalogues/holidays/01.webp" data-catalogue="holidays" aria-label="Open Valentine&#x27;s, Mother&#x27;s, St. Patrick&#x27;s &amp; Christmas catalogue">
                         <img src="assets/catalogues/holidays/01.webp" alt="Valentine&#x27;s, Mother&#x27;s, St. Patrick&#x27;s &amp; Christmas catalogue cover" loading="lazy" width="1001" height="1410">
-                        <span>Valentine&#x27;s, Mother&#x27;s, St. Patrick&#x27;s &amp; Christmas</span>
-                        <small>8 pages</small>
+                        <span class="fz-cat__open">Open catalogue</span>
                     </a>
-                    <a class="catalogue-card__download" href="assets/media/catalogue_holidays.pdf" download="Floreza - Valentine&#x27;s, Mother&#x27;s, St. Patrick&#x27;s &amp; Christmas.pdf"><i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
+                    <h3 class="fz-cat__title">Valentine&#x27;s, Mother&#x27;s, St. Patrick&#x27;s &amp; Christmas</h3>
+                    <p class="fz-cat__pages">8 pages</p>
+                    <a class="fz-cat__download" href="assets/media/catalogue_holidays.pdf" download="Floreza - Valentine&#x27;s, Mother&#x27;s, St. Patrick&#x27;s &amp; Christmas.pdf">
+                        <i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
                 </div>
-                <div class="col-6 col-lg-3 col-custom mb-30 catalogue-card-wrap">
-                    <a class="catalogue-card" href="assets/catalogues/halloween/01.webp" data-catalogue="halloween">
+                <div class="fz-cat" data-reveal>
+                    <a class="fz-cat__cover" href="assets/catalogues/halloween/01.webp" data-catalogue="halloween" aria-label="Open Halloween catalogue">
                         <img src="assets/catalogues/halloween/01.webp" alt="Halloween catalogue cover" loading="lazy" width="1002" height="1252">
-                        <span>Halloween</span>
-                        <small>2 pages</small>
+                        <span class="fz-cat__open">Open catalogue</span>
                     </a>
-                    <a class="catalogue-card__download" href="assets/media/catalogue_halloween.pdf" download="Floreza - Halloween.pdf"><i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
+                    <h3 class="fz-cat__title">Halloween</h3>
+                    <p class="fz-cat__pages">2 pages</p>
+                    <a class="fz-cat__download" href="assets/media/catalogue_halloween.pdf" download="Floreza - Halloween.pdf">
+                        <i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
                 </div>
-                <div class="col-6 col-lg-3 col-custom mb-30 catalogue-card-wrap">
-                    <a class="catalogue-card" href="assets/catalogues/minor-holidays/01.webp" data-catalogue="minor-holidays">
+                <div class="fz-cat" data-reveal>
+                    <a class="fz-cat__cover" href="assets/catalogues/minor-holidays/01.webp" data-catalogue="minor-holidays" aria-label="Open Minor Holidays catalogue">
                         <img src="assets/catalogues/minor-holidays/01.webp" alt="Minor Holidays catalogue cover" loading="lazy" width="1001" height="1410">
-                        <span>Minor Holidays</span>
-                        <small>14 pages</small>
+                        <span class="fz-cat__open">Open catalogue</span>
                     </a>
-                    <a class="catalogue-card__download" href="assets/media/catalogue_minor-holidays.pdf" download="Floreza - Minor Holidays.pdf"><i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
+                    <h3 class="fz-cat__title">Minor Holidays</h3>
+                    <p class="fz-cat__pages">14 pages</p>
+                    <a class="fz-cat__download" href="assets/media/catalogue_minor-holidays.pdf" download="Floreza - Minor Holidays.pdf">
+                        <i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
                 </div>
-                <div class="col-6 col-lg-3 col-custom mb-30 catalogue-card-wrap">
-                    <a class="catalogue-card" href="assets/catalogues/seasonal-celebration/01.webp" data-catalogue="seasonal-celebration">
+                <div class="fz-cat" data-reveal>
+                    <a class="fz-cat__cover" href="assets/catalogues/seasonal-celebration/01.webp" data-catalogue="seasonal-celebration" aria-label="Open Seasonal &amp; Celebration catalogue">
                         <img src="assets/catalogues/seasonal-celebration/01.webp" alt="Seasonal &amp; Celebration catalogue cover" loading="lazy" width="1002" height="1252">
-                        <span>Seasonal &amp; Celebration</span>
-                        <small>17 pages</small>
+                        <span class="fz-cat__open">Open catalogue</span>
                     </a>
-                    <a class="catalogue-card__download" href="assets/media/catalogue_seasonal-celebration.pdf" download="Floreza - Seasonal &amp; Celebration.pdf"><i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
+                    <h3 class="fz-cat__title">Seasonal &amp; Celebration</h3>
+                    <p class="fz-cat__pages">17 pages</p>
+                    <a class="fz-cat__download" href="assets/media/catalogue_seasonal-celebration.pdf" download="Floreza - Seasonal &amp; Celebration.pdf">
+                        <i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
                 </div>
-                <div class="col-6 col-lg-3 col-custom mb-30 catalogue-card-wrap">
-                    <a class="catalogue-card" href="assets/catalogues/hydrangeas/01.webp" data-catalogue="hydrangeas">
+                <div class="fz-cat" data-reveal>
+                    <a class="fz-cat__cover" href="assets/catalogues/hydrangeas/01.webp" data-catalogue="hydrangeas" aria-label="Open Hydrangeas catalogue">
                         <img src="assets/catalogues/hydrangeas/01.webp" alt="Hydrangeas catalogue cover" loading="lazy" width="1001" height="1416">
-                        <span>Hydrangeas</span>
-                        <small>7 pages</small>
+                        <span class="fz-cat__open">Open catalogue</span>
                     </a>
-                    <a class="catalogue-card__download" href="assets/media/catalogue_hydrangeas.pdf" download="Floreza - Hydrangeas.pdf"><i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
+                    <h3 class="fz-cat__title">Hydrangeas</h3>
+                    <p class="fz-cat__pages">7 pages</p>
+                    <a class="fz-cat__download" href="assets/media/catalogue_hydrangeas.pdf" download="Floreza - Hydrangeas.pdf">
+                        <i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
                 </div>
-                <div class="col-6 col-lg-3 col-custom mb-30 catalogue-card-wrap">
-                    <a class="catalogue-card catalogue-card--fit" href="assets/catalogues/bouquets/01.webp" data-catalogue="bouquets">
+                <div class="fz-cat fz-cat--fit" data-reveal>
+                    <a class="fz-cat__cover" href="assets/catalogues/bouquets/01.webp" data-catalogue="bouquets" aria-label="Open Bouquets &amp; Arrangements catalogue">
                         <img src="assets/catalogues/bouquets/01.webp" alt="Bouquets &amp; Arrangements catalogue cover" loading="lazy" width="1400" height="788">
-                        <span>Bouquets &amp; Arrangements</span>
-                        <small>10 pages</small>
+                        <span class="fz-cat__open">Open catalogue</span>
                     </a>
-                    <a class="catalogue-card__download" href="assets/media/catalogue_bqts.pdf" download="Floreza - Bouquets &amp; Arrangements.pdf"><i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
+                    <h3 class="fz-cat__title">Bouquets &amp; Arrangements</h3>
+                    <p class="fz-cat__pages">10 pages</p>
+                    <a class="fz-cat__download" href="assets/media/catalogue_bqts.pdf" download="Floreza - Bouquets &amp; Arrangements.pdf">
+                        <i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
                 </div>
-                <div class="col-6 col-lg-3 col-custom mb-30 catalogue-card-wrap">
-                    <a class="catalogue-card catalogue-card--fit" href="assets/catalogues/roses/01.webp" data-catalogue="roses">
+                <div class="fz-cat fz-cat--fit" data-reveal>
+                    <a class="fz-cat__cover" href="assets/catalogues/roses/01.webp" data-catalogue="roses" aria-label="Open Roses catalogue">
                         <img src="assets/catalogues/roses/01.webp" alt="Roses catalogue cover" loading="lazy" width="995" height="2089">
-                        <span>Roses</span>
-                        <small>2 pages</small>
+                        <span class="fz-cat__open">Open catalogue</span>
                     </a>
-                    <a class="catalogue-card__download" href="assets/media/catalogue_roses.pdf" download="Floreza - Roses.pdf"><i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
+                    <h3 class="fz-cat__title">Roses</h3>
+                    <p class="fz-cat__pages">2 pages</p>
+                    <a class="fz-cat__download" href="assets/media/catalogue_roses.pdf" download="Floreza - Roses.pdf">
+                        <i class="lnr lnr-download" aria-hidden="true"></i> Download PDF</a>
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
 
     <footer class="footer-area">
         <div class="footer-widget-area">
