@@ -1,8 +1,9 @@
 /*=============================================================
     Floreza design layer (on top of the theme's style.css)
     - Footer copyright bar (all pages)
-    - Home: hero, ribbon, partnering, explore, certifications
-    - About: core values
+    - Home: hero, partnering, explore, certifications
+    - About: hero, story, farm gallery, core values, call to action
+    - Contact: hero, contact panel + form, map
 ==============================================================*/
 :root {
   --fz-plum: #2b1b4a;
@@ -91,6 +92,13 @@
 .fz-btn--solid:hover {
   background: #fff;
   color: var(--fz-plum);
+}
+
+/* on light backgrounds a white hover would vanish */
+.fz-cta .fz-btn--solid:hover,
+.fz-contact__form .fz-btn--solid:hover {
+  background: var(--fz-plum);
+  color: #fff;
 }
 
 .fz-btn--ghost {
@@ -302,52 +310,6 @@
     padding: 13px 22px;
     font-size: 12px;
   }
-}
-
-/*------------------ Home: ribbon ------------------*/
-.fz-ribbon {
-  overflow: hidden;
-  background: var(--fz-plum);
-  color: var(--fz-cream);
-  padding: 18px 0;
-}
-
-.fz-ribbon__track {
-  display: flex;
-  width: max-content;
-  animation: fz-marquee 38s linear infinite;
-}
-
-.fz-ribbon__track ul {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.fz-ribbon__track li {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  font-family: var(--fz-display);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 22px;
-}
-
-.fz-ribbon__track li::after {
-  content: "";
-  width: 9px;
-  height: 9px;
-  margin: 0 30px;
-  border-radius: 50% 0;
-  background: var(--fz-bloom);
-  transform: rotate(45deg);
-}
-
-@keyframes fz-marquee {
-  to { transform: translateX(-50%); }
 }
 
 /*------------------ Home: partnering ------------------*/
@@ -726,9 +688,591 @@
   }
 }
 
+/*------------------ Page hero (About, Contact) ------------------*/
+.fz-page-hero {
+  position: relative;
+  padding: 90px 0 110px;
+  background: var(--fz-cream);
+  overflow: hidden;
+}
+
+.fz-page-hero::before {
+  content: "";
+  position: absolute;
+  right: -10%;
+  top: -30%;
+  width: 60%;
+  height: 160%;
+  background: radial-gradient(closest-side, rgba(245, 82, 166, .12), transparent);
+  pointer-events: none;
+}
+
+.fz-page-hero .fz-heading {
+  font-size: clamp(40px, 5.6vw, 76px);
+  font-weight: 300;
+  margin: 14px 0 26px;
+}
+
+.fz-page-hero__lead {
+  max-width: 460px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--fz-muted);
+  margin: 0 0 34px;
+}
+
+.fz-page-hero--center {
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.fz-page-hero--center .fz-page-hero__lead {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.fz-btn--plum {
+  background: var(--fz-plum);
+  color: #fff;
+}
+
+.fz-btn--plum:hover {
+  background: var(--fz-magenta);
+  color: #fff;
+}
+
+.fz-btn--line {
+  border-color: var(--fz-plum);
+  color: var(--fz-plum);
+}
+
+.fz-btn--line:hover {
+  background: var(--fz-plum);
+  color: #fff;
+}
+
+.fz-arch {
+  position: relative;
+  isolation: isolate;
+  max-width: 460px;
+  margin-left: auto;
+}
+
+.fz-arch__img {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 999px 999px 0 0;
+  box-shadow: 0 40px 70px -40px rgba(43, 27, 74, .55);
+}
+
+.fz-arch__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fz-arch::after {
+  content: "";
+  position: absolute;
+  inset: 22px -22px -22px 22px;
+  z-index: -1;
+  border: 1px solid var(--fz-magenta);
+  border-radius: 999px 999px 0 0;
+}
+
+/* rotating circular badge */
+.fz-badge {
+  position: absolute;
+  left: -64px;
+  bottom: 48px;
+  width: 150px;
+  height: 150px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--fz-plum);
+  color: var(--fz-cream);
+  box-shadow: 0 20px 40px -20px rgba(43, 27, 74, .7);
+}
+
+.fz-badge svg {
+  position: absolute;
+  inset: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  animation: fz-spin 26s linear infinite;
+}
+
+.fz-badge text {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  fill: currentColor;
+}
+
+.fz-badge__mark {
+  font-family: var(--fz-display);
+  font-style: italic;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--fz-bloom);
+}
+
+@keyframes fz-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 991px) {
+  .fz-page-hero {
+    padding: 60px 0 80px;
+  }
+
+  .fz-arch {
+    margin: 50px auto 0;
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 575px) {
+  .fz-arch {
+    max-width: 300px;
+  }
+
+  .fz-badge {
+    left: -24px;
+    width: 116px;
+    height: 116px;
+  }
+
+  .fz-badge text {
+    font-size: 9px;
+  }
+}
+
+/*------------------ About: story ------------------*/
+.fz-story {
+  padding: 120px 0 60px;
+  background: #fff;
+}
+
+.fz-story__quote {
+  font-family: var(--fz-display);
+  font-weight: 300;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.4;
+  color: var(--fz-plum);
+  margin: 0;
+}
+
+.fz-story__quote::first-letter {
+  float: left;
+  font-size: 3.4em;
+  line-height: .82;
+  padding: 6px 12px 0 0;
+  color: var(--fz-magenta);
+}
+
+.fz-story__side {
+  border-left: 1px solid #ecdfe6;
+  padding-left: 40px;
+}
+
+.fz-story__label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--fz-magenta);
+}
+
+.fz-story__side p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--fz-muted);
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .fz-story {
+    padding: 80px 0 40px;
+  }
+
+  .fz-story__side {
+    border-left: 0;
+    border-top: 1px solid #ecdfe6;
+    padding: 30px 0 0;
+    margin-top: 30px;
+  }
+}
+
+/*------------------ About: farm gallery ------------------*/
+.fz-farm {
+  padding: 60px 0 130px;
+  background: #fff;
+}
+
+.fz-farm__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  align-items: start;
+}
+
+.fz-farm figure {
+  margin: 0;
+}
+
+.fz-farm figure:nth-child(2) {
+  margin-top: 70px;
+}
+
+.fz-farm figure:nth-child(3) {
+  margin-top: 140px;
+}
+
+.fz-farm__img {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.fz-farm figure:nth-child(2) .fz-farm__img {
+  border-radius: 999px 999px 20px 20px;
+}
+
+.fz-farm__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--fz-ease);
+}
+
+.fz-farm figure:hover img {
+  transform: scale(1.06);
+}
+
+.fz-farm figcaption {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 18px;
+  font-family: var(--fz-display);
+  font-size: 22px;
+  color: var(--fz-plum);
+}
+
+.fz-farm figcaption span {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--fz-magenta);
+}
+
+@media (max-width: 767px) {
+  .fz-farm {
+    padding: 30px 0 90px;
+  }
+
+  .fz-farm__grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .fz-farm figure:nth-child(n) {
+    margin-top: 0;
+  }
+}
+
+/*------------------ Call to action band ------------------*/
+.fz-cta {
+  padding: 110px 0;
+  background: var(--fz-cream);
+  text-align: center;
+}
+
+.fz-cta .fz-heading {
+  max-width: 760px;
+  margin: 12px auto 34px;
+}
+
+.fz-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+/*------------------ Contact ------------------*/
+.fz-contact {
+  padding: 0 0 120px;
+  background: var(--fz-cream);
+}
+
+.fz-contact__panel {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 40px 80px -50px rgba(43, 27, 74, .45);
+}
+
+.fz-contact__info {
+  position: relative;
+  padding: 60px 50px;
+  background:
+    radial-gradient(70% 60% at 100% 0%, rgba(231, 36, 99, .3), transparent 60%),
+    var(--fz-plum);
+  color: var(--fz-cream);
+  overflow: hidden;
+}
+
+.fz-contact__info::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -90px;
+  width: 260px;
+  height: 320px;
+  border: 1px solid rgba(245, 82, 166, .45);
+  border-radius: 999px 999px 0 0;
+  pointer-events: none;
+}
+
+.fz-contact__info h2 {
+  font-family: var(--fz-display);
+  font-weight: 300;
+  font-size: 34px;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 14px;
+  text-transform: none;
+}
+
+.fz-contact__info > p {
+  color: rgba(251, 246, 240, .75);
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 40px;
+}
+
+.fz-contact__list {
+  margin: 0 0 44px;
+  padding: 0;
+  list-style: none;
+}
+
+.fz-contact__list li {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 26px;
+}
+
+.fz-contact__list i {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(245, 82, 166, .16);
+  color: var(--fz-bloom);
+  font-size: 18px;
+}
+
+.fz-contact__list small {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(251, 246, 240, .55);
+  margin-bottom: 2px;
+}
+
+.fz-contact__list a {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.fz-contact__list a:hover {
+  color: var(--fz-bloom);
+}
+
+.fz-contact__social {
+  display: flex;
+  gap: 10px;
+}
+
+.fz-contact__social a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(251, 246, 240, .35);
+  border-radius: 50%;
+  color: #fff;
+  transition: background .3s, border-color .3s;
+}
+
+.fz-contact__social a:hover {
+  background: var(--fz-magenta);
+  border-color: var(--fz-magenta);
+  color: #fff;
+}
+
+.fz-contact__form {
+  padding: 60px 56px;
+}
+
+.fz-contact__form h2 {
+  font-family: var(--fz-display);
+  font-weight: 400;
+  font-size: 34px;
+  color: var(--fz-plum);
+  margin: 0 0 6px;
+  text-transform: none;
+}
+
+.fz-contact__form > p {
+  color: var(--fz-muted);
+  margin: 0 0 34px;
+}
+
+.fz-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 30px;
+}
+
+.fz-field {
+  position: relative;
+  padding-top: 18px;
+}
+
+.fz-field--full {
+  grid-column: 1 / -1;
+}
+
+.fz-field input,
+.fz-field textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 0 12px;
+  border: 0;
+  border-bottom: 1px solid #ddd2da;
+  border-radius: 0;
+  background: transparent;
+  font-size: 16px;
+  color: var(--fz-ink);
+  outline: none;
+  transition: border-color .3s;
+}
+
+.fz-field textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.fz-field label {
+  position: absolute;
+  left: 0;
+  top: 28px;
+  margin: 0;
+  font-size: 15px;
+  color: var(--fz-muted);
+  pointer-events: none;
+  transform-origin: left top;
+  transition: transform .25s var(--fz-ease), color .25s;
+}
+
+.fz-field input:focus,
+.fz-field textarea:focus {
+  border-bottom-color: var(--fz-magenta);
+}
+
+.fz-field input:focus + label,
+.fz-field input:not(:placeholder-shown) + label,
+.fz-field textarea:focus + label,
+.fz-field textarea:not(:placeholder-shown) + label {
+  transform: translateY(-24px) scale(.78);
+  color: var(--fz-magenta);
+}
+
+.fz-field label .req {
+  color: var(--fz-magenta);
+}
+
+.fz-contact__send {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.fz-contact__send button {
+  cursor: pointer;
+}
+
+.fz-contact__send button[disabled] {
+  opacity: .6;
+  cursor: wait;
+}
+
+.fz-contact__send .form-message {
+  flex: 1 1 240px;
+  margin: 0;
+  font-size: 14px;
+  border-radius: 12px;
+}
+
+.fz-contact__send .form-message:empty {
+  display: none;
+}
+
+.fz-map {
+  margin-top: 60px;
+  overflow: hidden;
+  border-radius: 28px;
+  line-height: 0;
+  filter: grayscale(.35) saturate(.9);
+}
+
+.fz-map iframe {
+  width: 100%;
+  height: 380px;
+  border: 0;
+}
+
+@media (max-width: 991px) {
+  .fz-contact__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .fz-contact__info,
+  .fz-contact__form {
+    padding: 44px 28px;
+  }
+}
+
+@media (max-width: 575px) {
+  .fz-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .fz-map iframe {
+    height: 300px;
+  }
+}
+
 /*------------------ Reduced motion ------------------*/
 @media (prefers-reduced-motion: reduce) {
-  .fz-ribbon__track,
+  .fz-badge svg,
   .fz-hero__scroll span,
   .fz-hero__inner > * {
     animation: none;

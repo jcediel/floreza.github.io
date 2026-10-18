@@ -1,23 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-  <!-- Floreza core value icons, redrawn from the original artwork (hand on heart, two-tone brain,
+  <!-- Floreza core value icons, redrawn from the original artwork (honesty: raised hand with a heart, two-tone brain,
        radiant person). Colors: --plum, --bloom and --card (background of the card). -->
 
-  <!-- Honesty: hand on heart -->
+  <!-- Honesty: raised hand (an oath) with a heart in the palm -->
   <symbol id="icon-honesty" viewBox="0 0 120 120">
-    <path fill="var(--plum, #31205a)"
-      d="M60 106C24 82 8 62 10 40c2-20 24-30 40-20 4 3 7 6 10 10 3-4 6-7 10-10 16-10 38 0 40 20 2 22-14 42-50 66z"/>
-    <g transform="translate(66 64) rotate(42) translate(-58 -62)" stroke-linecap="round" stroke-linejoin="round">
-      <g stroke="var(--card, #fffaf5)" fill="var(--card, #fffaf5)" stroke-width="13">
-        <path d="M45 50V30M54 48V24M63 48V26M72 52V34M40 72l-9-12" fill="none"/>
-        <rect x="40" y="48" width="36" height="34" rx="12"/>
-        <path d="M46 80h24v34H46z"/>
+    <g stroke-linecap="round" fill="none">
+      <g stroke="var(--card, #fffaf5)" stroke-width="16">
+        <path d="M44 60V26M57 56V16M70 56V18M83 62V32M38 80L22 62"/>
       </g>
-      <g stroke="var(--bloom, #f552a6)" stroke-width="8" fill="none">
-        <path d="M45 50V30M54 48V24M63 48V26M72 52V34M40 72l-9-12"/>
+      <g stroke="var(--plum, #31205a)" stroke-width="12">
+        <path d="M44 60V26M57 56V16M70 56V18M83 62V32M38 80L22 62"/>
       </g>
-      <rect x="40" y="48" width="36" height="34" rx="12" fill="var(--bloom, #f552a6)"/>
-      <path d="M46 80h24v34H46z" fill="var(--bloom, #f552a6)"/>
     </g>
+    <rect x="34" y="50" width="56" height="50" rx="20" fill="var(--plum, #31205a)"/>
+    <rect x="46" y="94" width="32" height="20" rx="4" fill="var(--plum, #31205a)"/>
+    <path d="M62 92C49 84 44 77 44 70c0-6 5-10 10-9 3 1 6 3 8 6 2-3 5-5 8-6 5-1 10 3 10 9 0 7-5 14-18 22z"
+      fill="var(--bloom, #f552a6)" stroke="var(--card, #fffaf5)" stroke-width="3" stroke-linejoin="round"/>
   </symbol>
 
   <!-- Knowledge: two-tone brain -->

@@ -32,11 +32,15 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&display=swap">
     <link rel="stylesheet" href="assets/css/floreza.css">
+    <script>document.documentElement.classList.add('fz-js');</script>
 
 </head>
 
-<body>
+<body class="fz-contact-page">
 
 
 
@@ -209,124 +213,107 @@
         <!-- off-canvas menu end -->
     </header>
     <!-- Header Area End Here -->
-    <!-- Breadcrumb Area Start Here -->
-    <div class="breadcrumbs-area-contact position-relative">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="breadcrumb-content position-relative section-content">
-                        <h3 class="title-3 text-white">Contact Us</h3>                        
-                    </div>
-                </div>
-            </div>
+    <!-- Contact hero -->
+    <section class="fz-page-hero fz-page-hero--center">
+        <div class="container custom-area" data-reveal>
+            <span class="fz-eyebrow">Get in touch</span>
+            <h1 class="fz-heading">Let’s talk <em>flowers</em></h1>
+            <p class="fz-page-hero__lead">Questions about our products, our catalogues or a floral program for your
+                stores? Send us a message and our team will get back to you.</p>
         </div>
-    </div>
-    <!-- Breadcrumb Area End Here -->
-    <!-- Contact Us Area Start Here -->
-    <div class="contact-us-area mt-no-text">
+    </section>
+
+    <!-- Contact panel -->
+    <section class="fz-contact">
         <div class="container custom-area">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-custom">
-                    <div class="contact-info-item">
-                        <div class="con-info-icon">
-                            <i class="lnr lnr-map-marker"></i>
-                        </div>
-                        <div class="con-info-txt">
-                            <h4>Our Location</h4>
-                            <p>3400 NW 74th Ave, Miami, FL 33122</p>
-                        </div>
+            <div class="fz-contact__panel" data-reveal>
+                <aside class="fz-contact__info">
+                    <h2>Floreza Inc.</h2>
+                    <p>Fresh cut flowers for grocery and supermarket stores across the United States.</p>
+                    <ul class="fz-contact__list">
+                        <li>
+                            <i class="lnr lnr-map-marker" aria-hidden="true"></i>
+                            <div>
+                                <small>Visit us</small>
+                                <a href="https://www.google.com/maps/search/?api=1&amp;query=3400+NW+74th+Ave+Miami+FL+33122"
+                                    target="_blank" rel="noopener">3400 NW 74th Ave,<br>Miami, FL 33122</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="lnr lnr-phone-handset" aria-hidden="true"></i>
+                            <div>
+                                <small>Call us</small>
+                                <a href="tel:+13055058321">(+1) 305-505-8321</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="lnr lnr-envelope" aria-hidden="true"></i>
+                            <div>
+                                <small>Write to us</small>
+                                <a href="mailto:info@florezaus.com">info@florezaus.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="fz-contact__social">
+                        <a href="https://www.facebook.com/floreza.flowers/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/ana-may-luna-36a97799/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/floreza_est1980" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-custom">
-                    <div class="contact-info-item">
-                        <div class="con-info-icon">
-                            <i class="lnr lnr-smartphone"></i>
-                        </div>
-                        <div class="con-info-txt">
-                            <h4>Contact us</h4>
-                            <p>Mobile: (+1)305-505-8321</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 col-custom text-align-center">
-                    <div class="contact-info-item">
-                        <div class="con-info-icon">
-                            <i class="lnr lnr-envelope"></i>
-                        </div>
-                        <div class="con-info-txt">
-                            <h4>Support Overall</h4>
-                            <p>info@florezaus.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-custom">
+                </aside>
+
+                <div class="fz-contact__form">
+                    <h2>Send us a message</h2>
+                    <p>Fields marked with <span style="color: var(--fz-magenta)">*</span> are required.</p>
                     <!-- Backend: Google Apps Script, see apps-script/README.md -->
                     <form method="post" action="https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec"
                         id="contact-form" accept-charset="UTF-8" class="contact-form">
-                        <div class="comment-box mt-5">
-                            <h5 class="text-uppercase">Get in Touch</h5>
-                            <div class="row mt-3">
-                                <div class="col-md-6 col-custom">
-                                    <div class="input-item mb-4">
-                                        <label for="con_name" class="visually-hidden">Name</label>
-                                        <input class="border-0 rounded-0 w-100 input-area name gray-bg" type="text"
-                                            name="con_name" id="con_name" placeholder="Name" maxlength="200"
-                                            autocomplete="name" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-custom">
-                                    <div class="input-item mb-4">
-                                        <label for="con_email" class="visually-hidden">Email</label>
-                                        <input class="border-0 rounded-0 w-100 input-area email gray-bg" type="email"
-                                            name="con_email" id="con_email" placeholder="Email" maxlength="200"
-                                            autocomplete="email" required>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-custom">
-                                    <div class="input-item mb-4">
-                                        <label for="con_subject" class="visually-hidden">Subject</label>
-                                        <input class="border-0 rounded-0 w-100 input-area gray-bg" type="text"
-                                            name="con_subject" id="con_subject" placeholder="Subject" maxlength="200">
-                                    </div>
-                                </div>
-                                <div class="col-6 col-custom">
-                                    <div class="input-item mb-4">
-                                        <label for="con_phone" class="visually-hidden">Phone</label>
-                                        <input class="border-0 rounded-0 w-100 input-area gray-bg" type="tel"
-                                            name="con_phone" id="con_phone" placeholder="Phone" maxlength="40"
-                                            autocomplete="tel">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-custom">
-                                    <div class="input-item mb-4">
-                                        <label for="con_message" class="visually-hidden">Message</label>
-                                        <textarea cols="30" rows="5"
-                                            class="border-0 rounded-0 w-100 custom-textarea input-area gray-bg"
-                                            name="con_message" id="con_message" placeholder="Message" maxlength="5000"
-                                            required></textarea>
-                                    </div>
-                                </div>
-                                <!-- Honeypot: hidden from people, bots fill it -->
-                                <div class="visually-hidden" aria-hidden="true">
-                                    <label for="website">Website</label>
-                                    <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
-                                </div>
-                                <div class="col-12 col-custom mt-40">
-                                    <button type="submit" id="submit" name="submit"
-                                        class="btn flosun-button secondary-btn theme-color rounded-0">Send A
-                                        Message</button>
-                                </div>
-                                <p class="col-8 col-custom form-message mb-0" role="status" aria-live="polite"></p>
+                        <div class="fz-fields">
+                            <div class="fz-field">
+                                <input type="text" name="con_name" id="con_name" placeholder=" " maxlength="200"
+                                    autocomplete="name" required>
+                                <label for="con_name">Name <span class="req">*</span></label>
                             </div>
+                            <div class="fz-field">
+                                <input type="email" name="con_email" id="con_email" placeholder=" " maxlength="200"
+                                    autocomplete="email" required>
+                                <label for="con_email">Email <span class="req">*</span></label>
+                            </div>
+                            <div class="fz-field">
+                                <input type="text" name="con_subject" id="con_subject" placeholder=" " maxlength="200">
+                                <label for="con_subject">Subject</label>
+                            </div>
+                            <div class="fz-field">
+                                <input type="tel" name="con_phone" id="con_phone" placeholder=" " maxlength="40"
+                                    autocomplete="tel">
+                                <label for="con_phone">Phone</label>
+                            </div>
+                            <div class="fz-field fz-field--full">
+                                <textarea name="con_message" id="con_message" placeholder=" " maxlength="5000"
+                                    rows="5" required></textarea>
+                                <label for="con_message">Message <span class="req">*</span></label>
+                            </div>
+                        </div>
+                        <!-- Honeypot: hidden from people, bots fill it -->
+                        <div class="visually-hidden" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+                        </div>
+                        <div class="fz-contact__send">
+                            <button type="submit" id="submit" name="submit" class="fz-btn fz-btn--solid">Send message &rarr;</button>
+                            <p class="form-message" role="status" aria-live="polite"></p>
                         </div>
                     </form>
                 </div>
             </div>
+
+            <div class="fz-map" data-reveal>
+                <iframe title="Map: Floreza, 3400 NW 74th Ave, Miami, FL 33122"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-80.3240%2C25.8027%2C-80.3120%2C25.8097&amp;layer=mapnik&amp;marker=25.8062068%2C-80.3179746"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
-    </div>
-    <!-- Contact Us Area End Here -->
+    </section>
+
     <!--Footer Area Start-->
     <footer class="footer-area">
         <div class="footer-widget-area">
