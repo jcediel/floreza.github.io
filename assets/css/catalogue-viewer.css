@@ -198,3 +198,36 @@ body.cv-open {
 .season-section {
   scroll-margin-top: 100px;
 }
+
+/* Landscape or very tall covers: show the whole page instead of cropping */
+.catalogue-card--fit img {
+  object-fit: contain;
+  background: #f4f1ec;
+}
+
+#our-products,
+#seasonal,
+#catalogues {
+  scroll-margin-top: 100px;
+}
+
+/* Big page blocks on products.html: Our Products / Seasonal / Catalogues */
+#our-products,
+#seasonal,
+#catalogues {
+  padding-top: 40px;
+}
+
+#seasonal,
+#catalogues {
+  margin-top: 30px;
+  border-top: 1px solid #ececec;
+  padding-top: 70px;
+}
+
+@media (max-width: 767px) {
+  #seasonal,
+  #catalogues {
+    padding-top: 40px;
+  }
+}
