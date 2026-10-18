@@ -212,6 +212,7 @@ body.cv-open {
 /* Landscape or very tall covers: show the whole page instead of cropping */
 .catalogue-card--fit img {
   object-fit: contain;
+  object-position: center;
   background: #f4f1ec;
 }
 
@@ -240,4 +241,27 @@ body.cv-open {
   #catalogues {
     padding-top: 40px;
   }
+}
+
+.catalogue-card__download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 6px 14px;
+  border: 1px solid #E72463;
+  border-radius: 999px;
+  color: #E72463;
+  font-size: 12px;
+  letter-spacing: .06em;
+}
+
+.catalogue-card__download:hover,
+.catalogue-card__download:focus-visible {
+  background: #E72463;
+  color: #ffffff;
+}
+
+.catalogue-card-wrap {
+  text-align: center;
 }

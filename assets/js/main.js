@@ -232,19 +232,43 @@
 			  },
 		  }
 	});
-	// Testimonial Carousel
-	var intro11Slider = new Swiper('.testimonial-carousel', {
-        loop: true,
-        speed: 800,
-		slidesPerView: 1,
-        spaceBetween: 10,
-		effect: 'slide',
-        navigation: {
-            nextEl: '.home1-slider-next',
-            prevEl: '.home1-slider-prev',
-		},
-		//autoplay: {},
-
+	// Testimonial / product carousels: one Swiper per carousel so each one
+	// autoplays on its own timing, only while it is on screen.
+	var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	document.querySelectorAll('.testimonial-carousel').forEach(function (el, i) {
+		var slides = el.querySelectorAll('.swiper-slide').length;
+		var autoplayOn = !reduceMotion && slides > 1;
+		var swiper = new Swiper(el, {
+			loop: slides > 1,
+			speed: 800,
+			slidesPerView: 1,
+			spaceBetween: 10,
+			effect: 'slide',
+			navigation: {
+				nextEl: el.querySelector('.home1-slider-next'),
+				prevEl: el.querySelector('.home1-slider-prev'),
+			},
+			// stagger the timing so neighbouring carousels do not move in sync
+			autoplay: autoplayOn ? { delay: 3200 + (i % 3) * 600, disableOnInteraction: false } : false,
+		});
+		if (!autoplayOn || !swiper.autoplay) return;
+		swiper.autoplay.stop();
+		var visible = false, hovered = false;
+		function sync() {
+			if (visible && !hovered) { if (!swiper.autoplay.running) swiper.autoplay.start(); }
+			else if (swiper.autoplay.running) swiper.autoplay.stop();
+		}
+		el.addEventListener('mouseenter', function () { hovered = true; sync(); });
+		el.addEventListener('mouseleave', function () { hovered = false; sync(); });
+		if ('IntersectionObserver' in window) {
+			new IntersectionObserver(function (entries) {
+				visible = entries[0].isIntersecting;
+				sync();
+			}, { threshold: 0.3 }).observe(el);
+		} else {
+			visible = true;
+			sync();
+		}
 	});
 	// Latest Post Carousel
 	var intro11Slider = new Swiper('.latest-post-carousel', {

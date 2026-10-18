@@ -9,12 +9,13 @@
 
     // To add a catalogue: render its PDF pages to assets/catalogues/<slug>/ and add an entry here.
     // width/height = pixel size of the page images (all pages of a catalogue must match).
+    // pdf = downloadable file (assets/media/), shown as "Download PDF" in the viewer.
     var CATALOGUES = {
-        'holidays': { title: "Valentine's, Mother's Day, St. Patrick's & Christmas", pages: 8, width: 1001, height: 1410 },
-        'halloween': { title: 'Halloween', pages: 2, width: 1002, height: 1252 },
-        'minor-holidays': { title: 'Minor Holidays', pages: 14, width: 1001, height: 1410 },
-        'seasonal-celebration': { title: 'Seasonal & Celebration Collection', pages: 17, width: 1002, height: 1252 },
-        'hydrangeas': { title: 'Hydrangeas', pages: 7, width: 1001, height: 1416 },
+        'holidays': { title: "Valentine's, Mother's Day, St. Patrick's & Christmas", pages: 8, width: 1001, height: 1410, pdf: 'assets/media/catalogue_holidays.pdf' },
+        'halloween': { title: 'Halloween', pages: 2, width: 1002, height: 1252, pdf: 'assets/media/catalogue_halloween.pdf' },
+        'minor-holidays': { title: 'Minor Holidays', pages: 14, width: 1001, height: 1410, pdf: 'assets/media/catalogue_minor-holidays.pdf' },
+        'seasonal-celebration': { title: 'Seasonal & Celebration Collection', pages: 17, width: 1002, height: 1252, pdf: 'assets/media/catalogue_seasonal-celebration.pdf' },
+        'hydrangeas': { title: 'Hydrangeas', pages: 7, width: 1001, height: 1416, pdf: 'assets/media/catalogue_hydrangeas.pdf' },
         'bouquets': { title: 'Bouquets & Arrangements', pages: 10, width: 1400, height: 788, pdf: 'assets/media/catalogue_bqts.pdf' },
         'roses': { title: 'Roses', pages: 2, width: 995, height: 2089, pdf: 'assets/media/catalogue_roses.pdf' }
     };
@@ -127,7 +128,10 @@
         lastTrigger = trigger || null;
         titleEl.textContent = cat.title;
         downloadEl.hidden = !cat.pdf;
-        if (cat.pdf) downloadEl.href = cat.pdf;
+        if (cat.pdf) {
+            downloadEl.href = cat.pdf;
+            downloadEl.setAttribute('download', 'Floreza - ' + cat.title + '.pdf');
+        }
 
         viewer.hidden = false;
         document.body.classList.add('cv-open');

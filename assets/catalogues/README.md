@@ -2,7 +2,7 @@
 
 Each folder holds one catalogue as page images (`01.webp`, `02.webp`, ...).
 They are shown by `assets/js/catalogue-viewer.js` as a flip book.
-PDFs are not served (they are 10-50 MB; the images are ~1 MB per catalogue).
+A lighter PDF of each catalogue lives in `assets/media/catalogue_<slug>.pdf` for the "Download PDF" buttons.
 
 ## Add or replace a catalogue
 
@@ -19,11 +19,19 @@ PDFs are not served (they are 10-50 MB; the images are ~1 MB per catalogue).
    done
    ```
 
-2. Add an entry to `CATALOGUES` in `assets/js/catalogue-viewer.js`:
-   `'my-catalogue': { title: 'My Catalogue', pages: 12, width: 1000, height: 1414 }`
+2. Make the downloadable PDF. Designer PDFs are often 30-50 MB because of PNG images;
+   rebuild it from ~1700 px JPEG pages (≈0.3 MB per page) if it is over ~10 MB:
+
+   ```bash
+   pdftoppm -r 205 -jpeg -jpegopt quality=82 "My Catalogue.pdf" /tmp/$SLUG-dl   # 205 ≈ 1700/595*72 for A4
+   python3 -c "import glob;from PIL import Image;p=[Image.open(f).convert('RGB') for f in sorted(glob.glob('/tmp/$SLUG-dl-*.jpg'))];p[0].save('assets/media/catalogue_$SLUG.pdf',save_all=True,append_images=p[1:],resolution=205)"
+   ```
+
+3. Add an entry to `CATALOGUES` in `assets/js/catalogue-viewer.js`:
+   `'my-catalogue': { title: 'My Catalogue', pages: 12, width: 1000, height: 1414, pdf: 'assets/media/catalogue_my-catalogue.pdf' }`
    (`width`/`height` = pixel size of the page images).
 
-3. Link it from any page:
+4. Link it from any page (and add a card + "Download PDF" link in the Our Catalogues grid of `products.html`):
 
    ```html
    <a href="assets/catalogues/my-catalogue/01.webp" data-catalogue="my-catalogue"
