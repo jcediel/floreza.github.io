@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- Floreza core value icons, redrawn from the original artwork (hand on heart, two-tone brain,
+       radiant person). Colors: --plum, --bloom and --card (background of the card). -->
+
+  <!-- Honesty: hand on heart -->
+  <symbol id="icon-honesty" viewBox="0 0 120 120">
+    <path fill="var(--plum, #31205a)"
+      d="M60 106C24 82 8 62 10 40c2-20 24-30 40-20 4 3 7 6 10 10 3-4 6-7 10-10 16-10 38 0 40 20 2 22-14 42-50 66z"/>
+    <g transform="translate(66 64) rotate(42) translate(-58 -62)" stroke-linecap="round" stroke-linejoin="round">
+      <g stroke="var(--card, #fffaf5)" fill="var(--card, #fffaf5)" stroke-width="13">
+        <path d="M45 50V30M54 48V24M63 48V26M72 52V34M40 72l-9-12" fill="none"/>
+        <rect x="40" y="48" width="36" height="34" rx="12"/>
+        <path d="M46 80h24v34H46z"/>
+      </g>
+      <g stroke="var(--bloom, #f552a6)" stroke-width="8" fill="none">
+        <path d="M45 50V30M54 48V24M63 48V26M72 52V34M40 72l-9-12"/>
+      </g>
+      <rect x="40" y="48" width="36" height="34" rx="12" fill="var(--bloom, #f552a6)"/>
+      <path d="M46 80h24v34H46z" fill="var(--bloom, #f552a6)"/>
+    </g>
+  </symbol>
+
+  <!-- Knowledge: two-tone brain -->
+  <symbol id="icon-knowledge" viewBox="0 0 120 120">
+    <defs>
+      <clipPath id="brain-left"><rect x="0" y="0" width="58.5" height="120"/></clipPath>
+      <clipPath id="brain-right"><rect x="61.5" y="0" width="60" height="120"/></clipPath>
+      <g id="brain-lobes">
+        <ellipse cx="60" cy="60" rx="32" ry="38"/>
+        <circle cx="44" cy="30" r="16"/><circle cx="58" cy="24" r="14"/><circle cx="30" cy="44" r="15"/>
+        <circle cx="26" cy="64" r="15"/><circle cx="34" cy="82" r="15"/><circle cx="48" cy="94" r="13"/>
+        <circle cx="76" cy="30" r="16"/><circle cx="62" cy="24" r="14"/><circle cx="90" cy="44" r="15"/>
+        <circle cx="94" cy="64" r="15"/><circle cx="86" cy="82" r="15"/><circle cx="72" cy="94" r="13"/>
+      </g>
+    </defs>
+    <use href="#brain-lobes" clip-path="url(#brain-left)" fill="var(--plum, #31205a)"/>
+    <use href="#brain-lobes" clip-path="url(#brain-right)" fill="var(--bloom, #f552a6)"/>
+    <g fill="none" stroke="var(--card, #fffaf5)" stroke-width="4.5" stroke-linecap="round">
+      <path d="M44 22c-4 4-4 10 0 13M28 52c6 0 10 4 10 9M50 66c-6 2-8 8-5 13M36 88c4-2 8-1 10 3"/>
+      <path d="M76 22c4 4 4 10 0 13M92 52c-6 0-10 4-10 9M70 66c6 2 8 8 5 13M84 88c-4-2-8-1-10 3"/>
+    </g>
+  </symbol>
+
+  <!-- Optimism: radiant person -->
+  <symbol id="icon-optimism" viewBox="0 0 120 120">
+    <g stroke="var(--bloom, #f552a6)" stroke-width="5" stroke-linecap="round">
+      <path d="M60 6v12M60 102v12M6 60h12M102 60h12"/>
+      <path d="M21.8 21.8l8.5 8.5M89.7 89.7l8.5 8.5M98.2 21.8l-8.5 8.5M30.3 89.7l-8.5 8.5"/>
+      <path d="M39.3 10l3 7.3M77.7 102.7l3 7.3M10 80.7l7.3-3M102.7 42.3l7.3-3M80.7 10l-3 7.3M42.3 102.7l-3 7.3M110 80.7l-7.3-3M17.3 42.3l-7.3-3" stroke-width="4"/>
+    </g>
+    <circle cx="60" cy="44" r="12" fill="var(--plum, #31205a)"/>
+    <path d="M38 88V72c0-9 7-14 16-14h12c9 0 16 5 16 14v16z" fill="var(--plum, #31205a)"/>
+  </symbol>
+</svg>
