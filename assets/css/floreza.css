@@ -1294,11 +1294,11 @@
   position: absolute;
   bottom: 0;
   width: 46%;
-  aspect-ratio: 3 / 4.4;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
-  border: 8px solid #fff;
-  border-radius: 999px 999px 22px 22px;
-  background: var(--fz-sand);
+  padding: 10px 10px 34px;
+  border-radius: 4px;
+  background: #fff;
   box-shadow: 0 30px 60px -30px rgba(43, 27, 74, .5);
   transform-origin: 50% 110%;
   animation: fz-fan-in 1.2s var(--fz-ease) both;
@@ -1307,14 +1307,13 @@
 .fz-fan__card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #fff;
 }
 
 .fz-fan__card--1 { left: 2%; --r: -12deg; animation-delay: .25s; }
 .fz-fan__card--2 { left: 27%; --r: 0deg; z-index: 2; bottom: 34px; animation-delay: .1s; }
 .fz-fan__card--3 { left: 52%; --r: 12deg; animation-delay: .4s; }
-
-.fz-fan__card--1 img { object-fit: contain; background: var(--fz-sand); }
 
 .fz-fan__card { transform: rotate(var(--r)); }
 
@@ -1341,7 +1340,7 @@
   }
 
   .fz-fan__card {
-    border-width: 5px;
+    padding: 6px 6px 22px;
   }
 }
 
@@ -1437,72 +1436,99 @@
 
 .fz-prod__media {
   position: relative;
+  min-width: 0;
 }
 
-.fz-prod__media::before {
-  content: "";
-  position: absolute;
-  inset: 24px -24px -24px 24px;
-  border: 1px solid var(--fz-magenta);
-  border-radius: 999px 999px 24px 24px;
-  opacity: .5;
-}
-
-.fz-prod--reverse .fz-prod__media::before {
-  inset: 24px 24px -24px -24px;
-}
-
-.fz-prod__arch {
+/* polaroid / passe-partout frame: the whole photo is always visible, on white */
+.fz-polaroid {
+  --tilt: -2deg;
   position: relative;
+  width: 100%;
   max-width: 470px;
   margin: 0 auto;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  border-radius: 999px 999px 24px 24px;
-  background: var(--fz-cream);
-  box-shadow: 0 40px 70px -45px rgba(43, 27, 74, .6);
+  padding: 16px 16px 0;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow:
+    0 2px 6px rgba(43, 27, 74, .08),
+    0 40px 70px -40px rgba(43, 27, 74, .55);
+  transform: rotate(var(--tilt));
+  transition: transform .6s var(--fz-ease), box-shadow .6s var(--fz-ease);
 }
 
-.fz-block--sand .fz-prod__arch {
+.fz-prod--reverse .fz-polaroid {
+  --tilt: 2deg;
+}
+
+.fz-polaroid:hover {
+  transform: rotate(0deg) translateY(-6px);
+  box-shadow:
+    0 2px 6px rgba(43, 27, 74, .08),
+    0 50px 80px -40px rgba(43, 27, 74, .6);
+}
+
+.fz-polaroid__photo {
+  aspect-ratio: 4 / 5;
   background: #fff;
 }
 
-.fz-prod__arch .swiper-wrapper,
-.fz-prod__arch .swiper-slide {
+.fz-polaroid__photo .swiper-wrapper,
+.fz-polaroid__photo .swiper-slide {
   height: 100%;
 }
 
-.fz-prod__arch .swiper-slide img {
+.fz-polaroid__photo .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #fff;
 }
 
-.fz-prod--contain .fz-prod__arch .swiper-slide img {
-  object-fit: contain;
-  padding: 50px 40px 40px;
+/* lifestyle photos are portrait 2:3: match the frame so there are no side bars */
+.fz-prod:not(.fz-prod--contain) .fz-polaroid__photo {
+  aspect-ratio: 2 / 3;
+}
+
+.fz-prod:not(.fz-prod--contain) .fz-polaroid {
+  max-width: 420px;
+}
+
+.fz-prod--contain .fz-polaroid__photo .swiper-slide img {
+  padding: 24px;
+}
+
+.fz-polaroid__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 74px;
+  padding: 10px 4px 12px;
+}
+
+.fz-polaroid__caption > span:first-child {
+  font-family: var(--fz-script);
+  font-size: 30px;
+  line-height: 1.1;
+  color: var(--fz-plum);
 }
 
 .fz-prod__nav {
-  position: absolute;
-  right: 18px;
-  bottom: 18px;
-  z-index: 2;
   display: flex;
+  flex: none;
   gap: 8px;
 }
 
 .fz-prod__nav button {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   padding: 0;
-  border: 0;
+  border: 1px solid rgba(43, 27, 74, .18);
   border-radius: 50%;
-  background: rgba(255, 255, 255, .92);
+  background: #fff;
   color: var(--fz-plum);
-  box-shadow: 0 8px 20px -10px rgba(43, 27, 74, .5);
   cursor: pointer;
   transition: background .3s, color .3s, transform .3s var(--fz-ease);
 }
@@ -1580,7 +1606,7 @@
   }
 
   .fz-prod {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 34px;
     margin-bottom: 80px;
   }
@@ -1589,16 +1615,13 @@
     order: 0;
   }
 
-  .fz-prod__media::before {
-    inset: 14px -10px -14px 10px;
+  .fz-prod .fz-polaroid {
+    max-width: 320px;
+    padding: 12px 12px 0;
   }
 
-  .fz-prod--reverse .fz-prod__media::before {
-    inset: 14px 10px -14px -10px;
-  }
-
-  .fz-prod__arch {
-    max-width: 340px;
+  .fz-polaroid__caption > span:first-child {
+    font-size: 24px;
   }
 
   .fz-prod__text,
@@ -1986,6 +2009,7 @@
 @media (prefers-reduced-motion: reduce) {
   .fz-badge svg,
   .fz-fan__card,
+  .fz-polaroid,
   .fz-hero__scroll span,
   .fz-hero__inner > * {
     animation: none;

@@ -244,9 +244,10 @@
 			slidesPerView: 1,
 			spaceBetween: 10,
 			effect: 'slide',
+			// arrows live inside the carousel, or in the polaroid caption next to it
 			navigation: {
-				nextEl: el.querySelector('.home1-slider-next'),
-				prevEl: el.querySelector('.home1-slider-prev'),
+				nextEl: (el.closest('.fz-polaroid') || el).querySelector('.home1-slider-next'),
+				prevEl: (el.closest('.fz-polaroid') || el).querySelector('.home1-slider-prev'),
 			},
 			// stagger the timing so neighbouring carousels do not move in sync
 			autoplay: autoplayOn ? { delay: 3200 + (i % 3) * 600, disableOnInteraction: false } : false,
